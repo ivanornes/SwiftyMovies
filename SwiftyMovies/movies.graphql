@@ -1,0 +1,14 @@
+query MovieList {
+  movies {
+	popular(first: 10){
+	  edges {
+		node {
+		  id
+		  title
+		  rating
+		  poster(size:W500)
+		}
+	  }
+	}
+  }
+}
