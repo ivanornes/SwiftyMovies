@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		9F1C9CC225972586000AE492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C9CC025972586000AE492 /* LaunchScreen.storyboard */; };
 		9F1C9CCD25972587000AE492 /* SwiftyMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9CCC25972587000AE492 /* SwiftyMoviesTests.swift */; };
 		9F1C9CD825972587000AE492 /* SwiftyMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9CD725972587000AE492 /* SwiftyMoviesUITests.swift */; };
+		9F1C9CEA25972893000AE492 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1C9CE925972893000AE492 /* Apollo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1C9CEA25972893000AE492 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,9 @@
 			dependencies = (
 			);
 			name = SwiftyMovies;
+			packageProductDependencies = (
+				9F1C9CE925972893000AE492 /* Apollo */,
+			);
 			productName = SwiftyMovies;
 			productReference = 9F1C9CB225972584000AE492 /* SwiftyMovies.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 9F1C9CA925972584000AE492;
+			packageReferences = (
+				9F1C9CE825972893000AE492 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 9F1C9CB325972584000AE492 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -593,6 +601,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9F1C9CE825972893000AE492 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.39.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F1C9CE925972893000AE492 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F1C9CE825972893000AE492 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9F1C9CAA25972584000AE492 /* Project object */;
 }
