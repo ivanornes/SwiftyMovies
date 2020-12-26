@@ -16,6 +16,7 @@
 		9F1C9CCD25972587000AE492 /* SwiftyMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9CCC25972587000AE492 /* SwiftyMoviesTests.swift */; };
 		9F1C9CD825972587000AE492 /* SwiftyMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9CD725972587000AE492 /* SwiftyMoviesUITests.swift */; };
 		9F1C9CEA25972893000AE492 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1C9CE925972893000AE492 /* Apollo */; };
+		9F1C9CEF259728E1000AE492 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C9CEE259728E1000AE492 /* schema.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		9F1C9CD325972587000AE492 /* SwiftyMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1C9CD725972587000AE492 /* SwiftyMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyMoviesUITests.swift; sourceTree = "<group>"; };
 		9F1C9CD925972587000AE492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F1C9CEE259728E1000AE492 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		9F1C9CB425972584000AE492 /* SwiftyMovies */ = {
 			isa = PBXGroup;
 			children = (
+				9F1C9CEE259728E1000AE492 /* schema.json */,
 				9F1C9CB525972584000AE492 /* AppDelegate.swift */,
 				9F1C9CB725972584000AE492 /* SceneDelegate.swift */,
 				9F1C9CB925972584000AE492 /* ViewController.swift */,
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1C9CEF259728E1000AE492 /* schema.json in Resources */,
 				9F1C9CC225972586000AE492 /* LaunchScreen.storyboard in Resources */,
 				9F1C9CBF25972586000AE492 /* Assets.xcassets in Resources */,
 				9F1C9CBD25972584000AE492 /* Main.storyboard in Resources */,
