@@ -19,6 +19,10 @@
 		9F1C9CEF259728E1000AE492 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C9CEE259728E1000AE492 /* schema.json */; };
 		9F1C9CF425972A88000AE492 /* movies.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C9CF325972A88000AE492 /* movies.graphql */; };
 		9F1C9CF9259730E7000AE492 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9CF8259730E7000AE492 /* API.swift */; };
+		9F1C9D0A25975D78000AE492 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D0925975D78000AE492 /* Movie.swift */; };
+		9F1C9D1225975DB3000AE492 /* Movie+GraphQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D1125975DB3000AE492 /* Movie+GraphQL.swift */; };
+		9F1C9D1925975E36000AE492 /* MovieDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D1825975E36000AE492 /* MovieDataSource.swift */; };
+		9F1C9D2225975E84000AE492 /* GraphQLMovieDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D2125975E84000AE492 /* GraphQLMovieDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		9F1C9CEE259728E1000AE492 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		9F1C9CF325972A88000AE492 /* movies.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = movies.graphql; sourceTree = "<group>"; };
 		9F1C9CF8259730E7000AE492 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9F1C9D0925975D78000AE492 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		9F1C9D1125975DB3000AE492 /* Movie+GraphQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+GraphQL.swift"; sourceTree = "<group>"; };
+		9F1C9D1825975E36000AE492 /* MovieDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataSource.swift; sourceTree = "<group>"; };
+		9F1C9D2125975E84000AE492 /* GraphQLMovieDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLMovieDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,8 @@
 		9F1C9CB425972584000AE492 /* SwiftyMovies */ = {
 			isa = PBXGroup;
 			children = (
+				9F1C9D1625975DF4000AE492 /* Movie API */,
+				9F1C9D0825975D6A000AE492 /* Model */,
 				9F1C9CF325972A88000AE492 /* movies.graphql */,
 				9F1C9CEE259728E1000AE492 /* schema.json */,
 				9F1C9CF8259730E7000AE492 /* API.swift */,
@@ -137,6 +147,40 @@
 				9F1C9CD925972587000AE492 /* Info.plist */,
 			);
 			path = SwiftyMoviesUITests;
+			sourceTree = "<group>";
+		};
+		9F1C9D0825975D6A000AE492 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D0925975D78000AE492 /* Movie.swift */,
+				9F1C9D1125975DB3000AE492 /* Movie+GraphQL.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9F1C9D1625975DF4000AE492 /* Movie API */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D2025975E70000AE492 /* GraphQL Movie Data Source */,
+				9F1C9D1725975E02000AE492 /* Movie Data Source */,
+			);
+			path = "Movie API";
+			sourceTree = "<group>";
+		};
+		9F1C9D1725975E02000AE492 /* Movie Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D1825975E36000AE492 /* MovieDataSource.swift */,
+			);
+			path = "Movie Data Source";
+			sourceTree = "<group>";
+		};
+		9F1C9D2025975E70000AE492 /* GraphQL Movie Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D2125975E84000AE492 /* GraphQLMovieDatasource.swift */,
+			);
+			path = "GraphQL Movie Data Source";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,10 +321,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1C9D1225975DB3000AE492 /* Movie+GraphQL.swift in Sources */,
+				9F1C9D2225975E84000AE492 /* GraphQLMovieDatasource.swift in Sources */,
 				9F1C9CBA25972584000AE492 /* ViewController.swift in Sources */,
 				9F1C9CB625972584000AE492 /* AppDelegate.swift in Sources */,
 				9F1C9CF9259730E7000AE492 /* API.swift in Sources */,
 				9F1C9CB825972584000AE492 /* SceneDelegate.swift in Sources */,
+				9F1C9D1925975E36000AE492 /* MovieDataSource.swift in Sources */,
+				9F1C9D0A25975D78000AE492 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
