@@ -1,0 +1,6 @@
+{
+  "cbe077009adbf170f3200476fffd769e07af293a101dd602cac9d973f06f13de": {
+    "name": "MovieList",
+    "source": "query MovieList {\n  movies {\n    __typename\n    popular(first: 10) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n        }\n      }\n    }\n  }\n}"
+  }
+}
