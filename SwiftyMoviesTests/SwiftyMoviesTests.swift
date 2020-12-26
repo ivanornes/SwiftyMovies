@@ -19,16 +19,20 @@ class SwiftyMoviesTests: XCTestCase {
         let sut = NetworkTransport()
         let query = MovieListQuery()
         let exp = expectation(description: "Fetch result")
+        var movieList: [SwiftyMovies.MovieListQuery.Data.Movie.Popular.Edge.Node] = []
         let _ = sut.apollo.fetch(query: query) { result in
             switch result {
-            case .success(let queryResult):
-                XCTAssertNotNil(queryResult.data)
-                XCTAssertNil(queryResult.errors)
-                break
+            case .success(let graphQLResult):
+                XCTAssertNotNil(graphQLResult.data)
+                XCTAssertNil(graphQLResult.errors)
+                if let moviesConnection = graphQLResult.data?.movies.popular.edges {
+                    movieList.append(contentsOf: moviesConnection.compactMap { $0?.node })
+                }
+                XCTAssertTrue(!movieList.isEmpty)
             case .failure(let error): XCTFail("Error \(error.localizedDescription) loading movies data")
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 3.0)
+        wait(for: [exp], timeout: 5.0)
     }
 }
