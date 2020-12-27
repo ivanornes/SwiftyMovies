@@ -22,9 +22,16 @@
 		9F1C9D1925975E36000AE492 /* MovieDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D1825975E36000AE492 /* MovieDataSource.swift */; };
 		9F1C9D2225975E84000AE492 /* GraphQLMovieDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D2125975E84000AE492 /* GraphQLMovieDatasource.swift */; };
 		9F1C9D33259880A9000AE492 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C9D32259880A9000AE492 /* Feed.storyboard */; };
-		9F1C9D38259880D7000AE492 /* FeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D37259880D7000AE492 /* FeedCollectionViewController.swift */; };
-		9F1C9D402598817F000AE492 /* UIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D3F2598817F000AE492 /* UIComposer.swift */; };
+		9F1C9D38259880D7000AE492 /* MovieFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D37259880D7000AE492 /* MovieFeedViewController.swift */; };
 		9F1C9D4525989C94000AE492 /* FeedCollectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D4425989C94000AE492 /* FeedCollectionViewControllerTests.swift */; };
+		9F1C9D4B2598D4AF000AE492 /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D4A2598D4AF000AE492 /* CellController.swift */; };
+		9F1C9D5425993751000AE492 /* MovieFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D5325993751000AE492 /* MovieFeedPresenter.swift */; };
+		9F1C9D5D25993964000AE492 /* MovieFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D5C25993964000AE492 /* MovieFeedInteractor.swift */; };
+		9F1C9D6A259939A8000AE492 /* MovieFeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D69259939A8000AE492 /* MovieFeedProtocols.swift */; };
+		9F1C9D7625993C10000AE492 /* MovieFeedWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D7525993C10000AE492 /* MovieFeedWireframe.swift */; };
+		9F1C9D8125994061000AE492 /* MovieFeedCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D8025994061000AE492 /* MovieFeedCellController.swift */; };
+		9F1C9D8A259941C6000AE492 /* MovieFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D89259941C6000AE492 /* MovieFeedCell.swift */; };
+		9F1C9D9225994C0C000AE492 /* MovieFeedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D9125994C0C000AE492 /* MovieFeedFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +72,16 @@
 		9F1C9D1825975E36000AE492 /* MovieDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataSource.swift; sourceTree = "<group>"; };
 		9F1C9D2125975E84000AE492 /* GraphQLMovieDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLMovieDatasource.swift; sourceTree = "<group>"; };
 		9F1C9D32259880A9000AE492 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
-		9F1C9D37259880D7000AE492 /* FeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewController.swift; sourceTree = "<group>"; };
-		9F1C9D3F2598817F000AE492 /* UIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComposer.swift; sourceTree = "<group>"; };
+		9F1C9D37259880D7000AE492 /* MovieFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedViewController.swift; sourceTree = "<group>"; };
 		9F1C9D4425989C94000AE492 /* FeedCollectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewControllerTests.swift; sourceTree = "<group>"; };
+		9F1C9D4A2598D4AF000AE492 /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
+		9F1C9D5325993751000AE492 /* MovieFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedPresenter.swift; sourceTree = "<group>"; };
+		9F1C9D5C25993964000AE492 /* MovieFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedInteractor.swift; sourceTree = "<group>"; };
+		9F1C9D69259939A8000AE492 /* MovieFeedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedProtocols.swift; sourceTree = "<group>"; };
+		9F1C9D7525993C10000AE492 /* MovieFeedWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedWireframe.swift; sourceTree = "<group>"; };
+		9F1C9D8025994061000AE492 /* MovieFeedCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedCellController.swift; sourceTree = "<group>"; };
+		9F1C9D89259941C6000AE492 /* MovieFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedCell.swift; sourceTree = "<group>"; };
+		9F1C9D9125994C0C000AE492 /* MovieFeedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,13 +135,13 @@
 			children = (
 				9F1C9CB525972584000AE492 /* AppDelegate.swift */,
 				9F1C9CB725972584000AE492 /* SceneDelegate.swift */,
-				9F1C9D3F2598817F000AE492 /* UIComposer.swift */,
 				9F1C9CF8259730E7000AE492 /* API.swift */,
 				9F1C9D1625975DF4000AE492 /* Movie API */,
 				9F1C9D0825975D6A000AE492 /* Model */,
-				9F1C9CF325972A88000AE492 /* movies.graphql */,
-				9F1C9D2F2598804E000AE492 /* Movies UI */,
+				9F1C9D852599406A000AE492 /* Shared UI */,
+				9F1C9D6425993972000AE492 /* Movie Feed */,
 				9F1C9CEE259728E1000AE492 /* schema.json */,
+				9F1C9CF325972A88000AE492 /* movies.graphql */,
 				9F1C9CBE25972586000AE492 /* Assets.xcassets */,
 				9F1C9CC025972586000AE492 /* LaunchScreen.storyboard */,
 				9F1C9CC325972586000AE492 /* Info.plist */,
@@ -188,29 +202,68 @@
 			path = "GraphQL Movie Data Source";
 			sourceTree = "<group>";
 		};
-		9F1C9D2F2598804E000AE492 /* Movies UI */ = {
-			isa = PBXGroup;
-			children = (
-				9F1C9D312598806A000AE492 /* Views */,
-				9F1C9D302598805F000AE492 /* Controllers */,
-			);
-			path = "Movies UI";
-			sourceTree = "<group>";
-		};
-		9F1C9D302598805F000AE492 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				9F1C9D37259880D7000AE492 /* FeedCollectionViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		9F1C9D312598806A000AE492 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				9F1C9D32259880A9000AE492 /* Feed.storyboard */,
+				9F1C9D8025994061000AE492 /* MovieFeedCellController.swift */,
+				9F1C9D37259880D7000AE492 /* MovieFeedViewController.swift */,
+				9F1C9D9125994C0C000AE492 /* MovieFeedFlowLayout.swift */,
+				9F1C9D89259941C6000AE492 /* MovieFeedCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9F1C9D5225993734000AE492 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D5325993751000AE492 /* MovieFeedPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9F1C9D5B2599394A000AE492 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D5C25993964000AE492 /* MovieFeedInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9F1C9D6425993972000AE492 /* Movie Feed */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D7425993BF6000AE492 /* Wireframe */,
+				9F1C9D682599399B000AE492 /* Protocols */,
+				9F1C9D312598806A000AE492 /* Views */,
+				9F1C9D5225993734000AE492 /* Presenter */,
+				9F1C9D5B2599394A000AE492 /* Interactor */,
+			);
+			path = "Movie Feed";
+			sourceTree = "<group>";
+		};
+		9F1C9D682599399B000AE492 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D69259939A8000AE492 /* MovieFeedProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9F1C9D7425993BF6000AE492 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D7525993C10000AE492 /* MovieFeedWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		9F1C9D852599406A000AE492 /* Shared UI */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D4A2598D4AF000AE492 /* CellController.swift */,
+			);
+			path = "Shared UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,13 +406,20 @@
 			files = (
 				9F1C9D1225975DB3000AE492 /* Movie+GraphQL.swift in Sources */,
 				9F1C9D2225975E84000AE492 /* GraphQLMovieDatasource.swift in Sources */,
+				9F1C9D8125994061000AE492 /* MovieFeedCellController.swift in Sources */,
 				9F1C9CB625972584000AE492 /* AppDelegate.swift in Sources */,
 				9F1C9CF9259730E7000AE492 /* API.swift in Sources */,
-				9F1C9D402598817F000AE492 /* UIComposer.swift in Sources */,
-				9F1C9D38259880D7000AE492 /* FeedCollectionViewController.swift in Sources */,
+				9F1C9D6A259939A8000AE492 /* MovieFeedProtocols.swift in Sources */,
+				9F1C9D38259880D7000AE492 /* MovieFeedViewController.swift in Sources */,
+				9F1C9D5425993751000AE492 /* MovieFeedPresenter.swift in Sources */,
 				9F1C9CB825972584000AE492 /* SceneDelegate.swift in Sources */,
+				9F1C9D8A259941C6000AE492 /* MovieFeedCell.swift in Sources */,
 				9F1C9D1925975E36000AE492 /* MovieDataSource.swift in Sources */,
 				9F1C9D0A25975D78000AE492 /* Movie.swift in Sources */,
+				9F1C9D7625993C10000AE492 /* MovieFeedWireframe.swift in Sources */,
+				9F1C9D4B2598D4AF000AE492 /* CellController.swift in Sources */,
+				9F1C9D9225994C0C000AE492 /* MovieFeedFlowLayout.swift in Sources */,
+				9F1C9D5D25993964000AE492 /* MovieFeedInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
