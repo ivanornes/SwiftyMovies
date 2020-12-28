@@ -10,10 +10,13 @@ import UIKit
 public final class MovieFeedWireframe {
     private init() {}
     
-    public static func composeUIWith(dataSource: MovieDataSource, selection: @escaping (Movie) -> Void) -> UIViewController {
+    public static func composeUIWith(dataSource: MovieDataSource, favoriteDataSource: FavoriteDataSource, selection: @escaping (Movie) -> Void) -> UIViewController {
         let vc = makeMovieFeedViewController(title: "Swifty Movies")
         let interactor = MovieFeedInteractor(dataSource: dataSource)
-        let presenter = MovieFeedPresenter(view: vc, interactor: interactor, selection: selection)
+        let presenter = MovieFeedPresenter(view: vc,
+                                           interactor: interactor,
+                                           selection: selection,
+                                           favoriteDataSource: favoriteDataSource)
         vc.presenter = presenter
         vc.loadNextPage = interactor.loadNextPage
         interactor.presenter = presenter

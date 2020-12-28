@@ -34,8 +34,19 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="okK-fJ-O4g">
                                             <rect key="frame" x="0.0" y="0.0" width="224" height="302"/>
                                         </imageView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8I-sB-MPG">
+                                            <rect key="frame" x="0.0" y="258" width="224" height="44"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BHk-0A-Fno">
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="waO-YX-Anm"/>
+                                            </constraints>
+                                            <blurEffect style="regular"/>
+                                        </visualEffectView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-Ch-pmg">
-                                            <rect key="frame" x="0.0" y="281" width="224" height="21"/>
+                                            <rect key="frame" x="10" y="268" width="170" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="gPZ-7I-g6s"/>
                                             </constraints>
@@ -43,13 +54,26 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGX-8o-k4J">
+                                            <rect key="frame" x="180" y="258" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="lLG-PN-J9j"/>
+                                            </constraints>
+                                            <state key="normal" image="star" catalog="system"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="q8I-sB-MPG" secondAttribute="bottom" id="3LG-Tx-FnS"/>
+                                        <constraint firstItem="GGX-8o-k4J" firstAttribute="bottom" secondItem="q8I-sB-MPG" secondAttribute="bottom" id="5Bf-tR-Ihf"/>
                                         <constraint firstAttribute="bottom" secondItem="okK-fJ-O4g" secondAttribute="bottom" id="B8x-u3-6Wx"/>
-                                        <constraint firstAttribute="bottom" secondItem="mnC-Ch-pmg" secondAttribute="bottom" id="DeH-Jn-7Ev"/>
+                                        <constraint firstItem="q8I-sB-MPG" firstAttribute="leading" secondItem="7Mv-2s-iQZ" secondAttribute="leading" id="BUr-lw-wFC"/>
                                         <constraint firstItem="okK-fJ-O4g" firstAttribute="top" secondItem="7Mv-2s-iQZ" secondAttribute="top" id="Q0R-Ob-gTx"/>
-                                        <constraint firstItem="mnC-Ch-pmg" firstAttribute="leading" secondItem="7Mv-2s-iQZ" secondAttribute="leading" id="Rin-N3-815"/>
-                                        <constraint firstAttribute="trailing" secondItem="mnC-Ch-pmg" secondAttribute="trailing" id="c7q-RR-Ih9"/>
+                                        <constraint firstItem="mnC-Ch-pmg" firstAttribute="leading" secondItem="7Mv-2s-iQZ" secondAttribute="leading" constant="10" id="Rin-N3-815"/>
+                                        <constraint firstAttribute="trailing" secondItem="GGX-8o-k4J" secondAttribute="trailing" id="ZG7-vc-ugc"/>
+                                        <constraint firstItem="mnC-Ch-pmg" firstAttribute="top" secondItem="q8I-sB-MPG" secondAttribute="top" constant="10" id="dWo-5d-bmx"/>
+                                        <constraint firstItem="GGX-8o-k4J" firstAttribute="top" secondItem="q8I-sB-MPG" secondAttribute="top" id="kKw-qY-oWa"/>
+                                        <constraint firstItem="GGX-8o-k4J" firstAttribute="leading" secondItem="mnC-Ch-pmg" secondAttribute="trailing" id="qDf-E9-15D"/>
+                                        <constraint firstAttribute="trailing" secondItem="q8I-sB-MPG" secondAttribute="trailing" id="rFC-46-7TX"/>
                                         <constraint firstAttribute="trailing" secondItem="okK-fJ-O4g" secondAttribute="trailing" id="v50-hK-FwB"/>
                                         <constraint firstItem="okK-fJ-O4g" firstAttribute="leading" secondItem="7Mv-2s-iQZ" secondAttribute="leading" id="vRQ-xb-PCi"/>
                                     </constraints>
@@ -57,6 +81,7 @@
                                 <size key="customSize" width="224" height="302"/>
                                 <connections>
                                     <outlet property="posterImageView" destination="okK-fJ-O4g" id="XHr-1O-Ksf"/>
+                                    <outlet property="starButton" destination="GGX-8o-k4J" id="Ag1-yD-rb9"/>
                                     <outlet property="titleLabel" destination="mnC-Ch-pmg" id="iZ5-Bi-JoG"/>
                                 </connections>
                             </collectionViewCell>
@@ -73,6 +98,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -12,12 +12,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     private lazy var dataSource: MovieDataSource = {
-//        #if DEBUG
-//        let url = URL(string: "http://127.0.0.1:8080")!
-//        #else
+        #if DEBUG
+        let url = URL(string: "http://127.0.0.1:8080")!
+        #else
         let url = URL(string: "https://tmdb.apps.quintero.io")!
-//        #endif
+        #endif
         return GraphQLMovieDataSourceFactory.makeDataSource(url: url)
+    }()
+    
+    private lazy var favoriteDataSource: FavoriteDataSource = {
+        UserDefaultsFavoriteDataSource()
     }()
     
     private func showMovieDetail(for movie: Movie) {
@@ -25,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.pushViewController(movieDetail, animated: true)
     }
     
-    private lazy var navigationController = UINavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource) { movie in
+    private lazy var navigationController = UINavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource, favoriteDataSource: favoriteDataSource) { movie in
         self.showMovieDetail(for: movie)
     })
     

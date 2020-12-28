@@ -10,4 +10,5 @@ import UIKit
 public final class MovieFeedCell: UICollectionViewCell {
     @IBOutlet private(set) public var titleLabel: UILabel!
     @IBOutlet private(set) public var posterImageView: UIImageView!
+    @IBOutlet private(set) public var starButton: UIButton!
 }

@@ -12,18 +12,26 @@ public final class MovieFeedPresenter: MovieFeedPresenterProtocol {
     private weak var view: MovieFeedViewProtocol?
     private let interactor: MovieFeedInteractorInputProtocol
     private let selection: (Movie) -> Void
+    private let favoriteDataSource: FavoriteDataSource
     
-    public init(view: MovieFeedViewProtocol, interactor: MovieFeedInteractorInputProtocol, selection: @escaping (Movie) -> Void) {
+    public init(view: MovieFeedViewProtocol,
+                interactor: MovieFeedInteractorInputProtocol,
+                selection: @escaping (Movie) -> Void,
+                favoriteDataSource: FavoriteDataSource) {
         self.view = view
         self.interactor = interactor
         self.selection = selection
+        self.favoriteDataSource = favoriteDataSource
     }
 }
 
 extension MovieFeedPresenter: MovieFeedInteractorOutputProtocol {
     public func show(_ movies: [Movie]) {
         view?.show(movies.map {
-            CellController(id: $0, MovieFeedCellController(model: $0, selection: selection))
+            CellController(id: $0,
+                           MovieFeedCellController(model: $0,
+                                                   favoriteDataSource: favoriteDataSource,
+                                                           selection: selection))
         })
     }
     
