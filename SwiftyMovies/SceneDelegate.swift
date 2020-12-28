@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }()
     
     private func showMovieDetail(for movie: Movie) {
-        let movieDetail = MovieDetailWireframe.composeUIWith(movie: movie, dataSource: dataSource)
+        let movieDetail = MovieDetailWireframe.composeUIWith(movie: movie, favoriteDataSource: favoriteDataSource)
         navigationController.pushViewController(movieDetail, animated: true)
     }
     

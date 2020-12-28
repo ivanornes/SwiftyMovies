@@ -10,8 +10,14 @@ import UIKit
 public final class MovieDetailWireframe {
     private init() {}
     
-    public static func composeUIWith(movie: Movie, dataSource: MovieDataSource) -> UIViewController {
+    public static func composeUIWith(movie: Movie, favoriteDataSource: FavoriteDataSource) -> UIViewController {
         let vc = makeMovieDetailViewController(title: movie.title)
+        let interactor = MovieDetailInteractor(movie: movie, favoriteDataSource: favoriteDataSource)
+        let presenter = MovieDetailPresenter(interactor: interactor)
+        presenter.view = vc
+        vc.presenter = presenter
+        interactor.presenter = presenter
+        vc.refreshData = interactor.loadData
         return vc
     }
     
