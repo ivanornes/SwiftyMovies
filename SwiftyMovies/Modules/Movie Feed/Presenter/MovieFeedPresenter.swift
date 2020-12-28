@@ -26,4 +26,8 @@ extension MovieFeedPresenter: MovieFeedInteractorOutputProtocol {
             CellController(id: $0, MovieFeedCellController(model: $0, selection: selection))
         })
     }
+    
+    public func showError() {
+        view?.showError()
+    }
 }

@@ -26,7 +26,7 @@ class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
             self?.isLoading = false
             switch result {
             case .success(let movies): self?.presenter?.show(movies)
-            case .failure(_): break
+            case .failure(_): self?.presenter?.showError()
             }
         }
     }

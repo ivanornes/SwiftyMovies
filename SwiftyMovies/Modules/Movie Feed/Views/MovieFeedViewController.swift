@@ -11,6 +11,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     
     var presenter: MovieFeedPresenterProtocol?
     var loadNextPage: (() -> Void)?
+    private let errorView = ErrorView()
     
     private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CellController> = {
         .init(collectionView: collectionView, cellProvider: { collectionView, indexPath, controller -> UICollectionViewCell? in
@@ -40,6 +41,11 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
             snapshot.appendItems(cellControllers, toSection: section)
         }
         dataSource.apply(snapshot)
+    }
+    
+    public func showError() {
+        errorView.errorText = "Error loading movie data"
+        present(errorView, animated: true, completion: nil)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

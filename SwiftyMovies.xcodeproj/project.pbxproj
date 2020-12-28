@@ -38,6 +38,7 @@
 		9F1C9DC62599B55B000AE492 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C9DC52599B55B000AE492 /* Detail.storyboard */; };
 		9F1C9DCB2599B580000AE492 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9DCA2599B580000AE492 /* MovieDetailViewController.swift */; };
 		9F1C9DD02599B5BF000AE492 /* MovieDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9DCF2599B5BF000AE492 /* MovieDetailViewControllerTests.swift */; };
+		9F4C95E2259A7B7A0074C8FB /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C95E1259A7B7A0074C8FB /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		9F1C9DC52599B55B000AE492 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		9F1C9DCA2599B580000AE492 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		9F1C9DCF2599B5BF000AE492 /* MovieDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		9F4C95E1259A7B7A0074C8FB /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 		9F1C9DB92599B4F0000AE492 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9F4C95E0259A7B640074C8FB /* Error view */,
 				9F1C9DBA2599B4F8000AE492 /* Movie Detail */,
 				9F1C9D6425993972000AE492 /* Movie Feed */,
 			);
@@ -321,6 +324,14 @@
 				9F1C9DCA2599B580000AE492 /* MovieDetailViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9F4C95E0259A7B640074C8FB /* Error view */ = {
+			isa = PBXGroup;
+			children = (
+				9F4C95E1259A7B7A0074C8FB /* ErrorView.swift */,
+			);
+			path = "Error view";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +490,7 @@
 				9F1C9D0A25975D78000AE492 /* Movie.swift in Sources */,
 				9F1C9DCB2599B580000AE492 /* MovieDetailViewController.swift in Sources */,
 				9F1C9D982599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift in Sources */,
+				9F4C95E2259A7B7A0074C8FB /* ErrorView.swift in Sources */,
 				9F1C9D7625993C10000AE492 /* MovieFeedWireframe.swift in Sources */,
 				9F1C9D4B2598D4AF000AE492 /* CellController.swift in Sources */,
 				9F1C9D9225994C0C000AE492 /* MovieFeedFlowLayout.swift in Sources */,
