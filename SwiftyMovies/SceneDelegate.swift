@@ -6,15 +6,14 @@
 //
 
 import UIKit
-import Apollo
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
     private lazy var dataSource: MovieDataSource = {
-        let client = ApolloClient(url: URL(string: "https://tmdb.apps.quintero.io")!)
-        return GraphQLMovieDatasource.init(client: client)
+        let url = URL(string: "https://tmdb.apps.quintero.io")!
+        return GraphQLMovieDataSourceFactory.makeDataSource(url: url)
     }()
     
     private lazy var navigationController = UINavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource))
