@@ -11,6 +11,7 @@ public final class MovieDetailViewController: UIViewController, MovieDetailViewP
     
     var presenter: MovieDetailPresenter?
     var refreshData: (() -> Void)?
+    var toggleFavorite: (() -> Void)?
     
     @IBOutlet weak var posterImageView: UIImageView!
     
@@ -32,5 +33,18 @@ public final class MovieDetailViewController: UIViewController, MovieDetailViewP
     }
     
     public func setIsFavorite(_ isFavorite: Bool) {
+        let item = UIBarButtonItem(image: getStarImage(isFavorite: isFavorite),
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(tapOnfavorite))
+        navigationItem.rightBarButtonItem = item
+    }
+    
+    @objc func tapOnfavorite() {
+        toggleFavorite?()
+    }
+    
+    private func getStarImage(isFavorite: Bool) -> UIImage? {
+        return isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
     }
 }

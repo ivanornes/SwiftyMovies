@@ -10,6 +10,7 @@ import UIKit
 final class MovieFeedViewController: UICollectionViewController, MovieFeedViewProtocol {
     
     var presenter: MovieFeedPresenterProtocol?
+    var reloadData: (() -> Void)?
     var loadNextPage: (() -> Void)?
     private let errorView = ErrorView()
     
@@ -23,15 +24,16 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         super.viewDidLoad()
         
         configureTableView()
-        reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        reloadData?()
     }
     
     private func configureTableView() {
         collectionView.dataSource = dataSource
-    }
-    
-    private func reloadData() {
-        loadNextPage?()
     }
     
     public func show(_ sections: [CellController]...) {

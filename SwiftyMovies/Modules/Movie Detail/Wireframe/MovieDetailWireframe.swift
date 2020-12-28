@@ -18,6 +18,7 @@ public final class MovieDetailWireframe {
         vc.presenter = presenter
         interactor.presenter = presenter
         vc.refreshData = interactor.loadData
+        vc.toggleFavorite = interactor.toggleFavorite
         return vc
     }
     

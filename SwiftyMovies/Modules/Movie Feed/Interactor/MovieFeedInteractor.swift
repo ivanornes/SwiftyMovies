@@ -13,7 +13,7 @@ class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
     
     let dataSource: MovieDataSource
     let moviesPerPage = 15
-    var currentPage = 0
+    var currentPage = 1
     var isLoading = false
     
     init(dataSource: MovieDataSource) {

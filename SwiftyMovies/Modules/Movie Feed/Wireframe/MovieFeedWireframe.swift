@@ -18,6 +18,7 @@ public final class MovieFeedWireframe {
                                            selection: selection,
                                            favoriteDataSource: favoriteDataSource)
         vc.presenter = presenter
+        vc.reloadData = interactor.loadMovies
         vc.loadNextPage = interactor.loadNextPage
         interactor.presenter = presenter
         return vc

@@ -23,4 +23,10 @@ public final class MovieDetailInteractor: MovieDetailInteractorInputProtocol {
         let movieViewModel = MovieDetailViewModel(title: movie.title, poster: movie.poster, isFavorite: isFavorite)
         presenter?.show(movieViewModel)
     }
+    
+    func toggleFavorite() {
+        let isFavorite = favoriteDataSource.isFavorite(id: movie.id)
+        favoriteDataSource.setFavorite(id: movie.id, value: !isFavorite)
+        loadData()
+    }
 }
