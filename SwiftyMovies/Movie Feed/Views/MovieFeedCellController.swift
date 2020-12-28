@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 public class MovieFeedCellController: NSObject, UICollectionViewDataSource {
     
@@ -24,15 +25,10 @@ public class MovieFeedCellController: NSObject, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MovieFeedCell
         cell.titleLabel.text = model.title
+        cell.posterImageView.kf.indicatorType = .activity
         if let url = model.posterURL {
-            DispatchQueue.global().async {
-                if let imageData = try? Data(contentsOf: url),
-                   let image = UIImage(data: imageData) {
-                    DispatchQueue.main.async {
-                        cell.posterImageView.image = image
-                    }
-                }
-            }
+            cell.posterImageView.kf.setImage(with: url,
+                                             placeholder: UIImage(named: "posterPlaceholder"))
         }
         return cell
     }

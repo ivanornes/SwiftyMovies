@@ -26,7 +26,6 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     
     private func configureTableView() {
         collectionView.dataSource = dataSource
-        collectionView.collectionViewLayout = MovieFeedFlowLayout()
     }
     
     private func reloadData() {

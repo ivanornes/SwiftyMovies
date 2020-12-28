@@ -33,6 +33,7 @@
 		9F1C9D8A259941C6000AE492 /* MovieFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D89259941C6000AE492 /* MovieFeedCell.swift */; };
 		9F1C9D9225994C0C000AE492 /* MovieFeedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D9125994C0C000AE492 /* MovieFeedFlowLayout.swift */; };
 		9F1C9D982599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D972599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift */; };
+		9F1C9DA12599AD46000AE492 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1C9DA02599AD46000AE492 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1C9DA12599AD46000AE492 /* Kingfisher in Frameworks */,
 				9F1C9CEA25972893000AE492 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +297,7 @@
 			name = SwiftyMovies;
 			packageProductDependencies = (
 				9F1C9CE925972893000AE492 /* Apollo */,
+				9F1C9DA02599AD46000AE492 /* Kingfisher */,
 			);
 			productName = SwiftyMovies;
 			productReference = 9F1C9CB225972584000AE492 /* SwiftyMovies.app */;
@@ -369,6 +372,7 @@
 			mainGroup = 9F1C9CA925972584000AE492;
 			packageReferences = (
 				9F1C9CE825972893000AE492 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				9F1C9D9F2599AD46000AE492 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 9F1C9CB325972584000AE492 /* Products */;
 			projectDirPath = "";
@@ -768,6 +772,14 @@
 				minimumVersion = 0.39.0;
 			};
 		};
+		9F1C9D9F2599AD46000AE492 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.15.8;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -775,6 +787,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9F1C9CE825972893000AE492 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		9F1C9DA02599AD46000AE492 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F1C9D9F2599AD46000AE492 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
