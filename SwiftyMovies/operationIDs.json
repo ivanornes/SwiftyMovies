@@ -1,6 +1,6 @@
 {
-  "cbe077009adbf170f3200476fffd769e07af293a101dd602cac9d973f06f13de": {
+  "6d90aeb2c05244873f6d313e7d2c4edc70fbde4c84c8d8371cac11395dc2c089": {
     "name": "MovieList",
-    "source": "query MovieList {\n  movies {\n    __typename\n    popular(first: 10) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n        }\n      }\n    }\n  }\n}"
+    "source": "query MovieList($limit: Int = 15) {\n  movies {\n    __typename\n    popular(first: $limit) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n        }\n      }\n    }\n  }\n}"
   }
 }

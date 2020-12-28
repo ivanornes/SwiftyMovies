@@ -10,6 +10,7 @@ import UIKit
 final class MovieFeedViewController: UICollectionViewController, MovieFeedViewProtocol {
     
     var presenter: MovieFeedPresenterProtocol?
+    var loadNextPage: (() -> Void)?
     
     private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CellController> = {
         .init(collectionView: collectionView, cellProvider: { collectionView, indexPath, controller -> UICollectionViewCell? in
@@ -29,7 +30,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     }
     
     private func reloadData() {
-        presenter?.reloadData()
+        loadNextPage?()
     }
     
     public func show(_ sections: [CellController]...) {
@@ -48,5 +49,14 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     
     private func cellController(at indexPath: IndexPath) -> CellController? {
         dataSource.itemIdentifier(for: indexPath)
+    }
+    
+    internal override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.isDragging else { return }
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        if offsetY > contentHeight - scrollView.frame.size.height {
+            loadNextPage?()
+        }
     }
 }

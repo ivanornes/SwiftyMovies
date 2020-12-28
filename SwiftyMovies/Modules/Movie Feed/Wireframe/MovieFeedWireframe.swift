@@ -15,6 +15,7 @@ public final class MovieFeedWireframe {
         let interactor = MovieFeedInteractor(dataSource: dataSource)
         let presenter = MovieFeedPresenter(view: vc, interactor: interactor, selection: selection)
         vc.presenter = presenter
+        vc.loadNextPage = interactor.loadNextPage
         interactor.presenter = presenter
         return vc
     }

@@ -12,7 +12,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     private lazy var dataSource: MovieDataSource = {
+        #if DEBUG
+        let url = URL(string: "http://127.0.0.1:8080")!
+        #else
         let url = URL(string: "https://tmdb.apps.quintero.io")!
+        #endif
         return GraphQLMovieDataSourceFactory.makeDataSource(url: url)
     }()
     

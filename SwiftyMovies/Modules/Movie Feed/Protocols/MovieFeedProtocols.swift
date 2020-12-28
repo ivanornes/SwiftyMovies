@@ -12,11 +12,9 @@ public protocol MovieFeedViewProtocol: class {
 }
 
 public protocol MovieFeedPresenterProtocol: class {
-    func reloadData()
 }
 
 public protocol MovieFeedInteractorInputProtocol: class {
-    func loadMovies()
 }
 
 public protocol MovieFeedInteractorOutputProtocol: class {

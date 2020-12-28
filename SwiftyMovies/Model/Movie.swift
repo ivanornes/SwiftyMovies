@@ -24,5 +24,6 @@ extension Movie: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(title)
+        hasher.combine(poster)
     }
 }

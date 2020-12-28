@@ -8,10 +8,10 @@ public final class MovieListQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query MovieList {
+    query MovieList($limit: Int = 15) {
       movies {
         __typename
-        popular(first: 10) {
+        popular(first: $limit) {
           __typename
           edges {
             __typename
@@ -30,9 +30,16 @@ public final class MovieListQuery: GraphQLQuery {
 
   public let operationName: String = "MovieList"
 
-  public let operationIdentifier: String? = "cbe077009adbf170f3200476fffd769e07af293a101dd602cac9d973f06f13de"
+  public let operationIdentifier: String? = "6d90aeb2c05244873f6d313e7d2c4edc70fbde4c84c8d8371cac11395dc2c089"
 
-  public init() {
+  public var limit: Int?
+
+  public init(limit: Int? = nil) {
+    self.limit = limit
+  }
+
+  public var variables: GraphQLMap? {
+    return ["limit": limit]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -69,7 +76,7 @@ public final class MovieListQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("popular", arguments: ["first": 10], type: .nonNull(.object(Popular.selections))),
+          GraphQLField("popular", arguments: ["first": GraphQLVariable("limit")], type: .nonNull(.object(Popular.selections))),
         ]
       }
 

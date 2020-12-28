@@ -18,18 +18,12 @@ public final class MovieFeedPresenter: MovieFeedPresenterProtocol {
         self.interactor = interactor
         self.selection = selection
     }
-    
-    public func reloadData() {
-        interactor.loadMovies()
-    }
 }
 
 extension MovieFeedPresenter: MovieFeedInteractorOutputProtocol {
     public func show(_ movies: [Movie]) {
-        view?.show(movies.map { movie in
-            CellController(id: movie,
-                           MovieFeedCellController(model: movie,
-                                                   selection: selection))
+        view?.show(movies.map {
+            CellController(id: $0, MovieFeedCellController(model: $0, selection: selection))
         })
     }
 }

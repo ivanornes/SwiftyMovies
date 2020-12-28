@@ -15,10 +15,10 @@ public final class GraphQLMovieDatasource: MovieDataSource {
     public init(client: ApolloClient) {
         self.client = client
     }
-    
-    public func getMovies(onCompletion: @escaping (Result<[Movie], Swift.Error>)->Void) {
+
+    public func getMovies(limit: Int, onCompletion: @escaping (Result<[Movie], Swift.Error>)->Void) {
         var movieList: [SwiftyMovies.MovieListQuery.Data.Movie.Popular.Edge.Node] = []
-        let query = MovieListQuery()
+        let query = MovieListQuery(limit: limit)
         let _ = client.fetch(query: query) { result in
             switch result {
             case .success(let graphQLResult):

@@ -15,9 +15,10 @@ class SwiftyMoviesTests: XCTestCase {
         let sut = makeSUT()
         
         let exp = expectation(description: "Wait for movie list request")
-        sut.getMovies { result in
+        let limit = 10
+        sut.getMovies(limit: limit) { result in
             switch result {
-            case .success(let movies): XCTAssertTrue(!movies.isEmpty)
+            case .success(let movies): XCTAssertTrue(movies.count == limit)
             case .failure(let error): XCTFail("Error \(error.localizedDescription) loading movies data")
             }
             exp.fulfill()

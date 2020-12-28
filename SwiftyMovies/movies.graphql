@@ -1,6 +1,6 @@
-query MovieList {
+query MovieList($limit: Int = 15) {
   movies {
-	popular(first: 10){
+	popular(first: $limit){
 	  edges {
 		node {
 		  id
