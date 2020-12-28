@@ -45,6 +45,7 @@
 		9F4C9607259A86150074C8FB /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9606259A86150074C8FB /* MovieDetailPresenter.swift */; };
 		9F4C960D259A86320074C8FB /* MovieDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C960C259A86320074C8FB /* MovieDetailProtocols.swift */; };
 		9F4C9616259A88860074C8FB /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9615259A88860074C8FB /* MovieDetailViewModel.swift */; };
+		9F4C961E259A8B8F0074C8FB /* MoviesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C961D259A8B8F0074C8FB /* MoviesNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		9F4C9606259A86150074C8FB /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		9F4C960C259A86320074C8FB /* MovieDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailProtocols.swift; sourceTree = "<group>"; };
 		9F4C9615259A88860074C8FB /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		9F4C961D259A8B8F0074C8FB /* MoviesNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				9F1C9D4A2598D4AF000AE492 /* CellController.swift */,
+				9F4C961D259A8B8F0074C8FB /* MoviesNavigationController.swift */,
 			);
 			path = "Shared UI";
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				9F1C9D1925975E36000AE492 /* MovieDataSource.swift in Sources */,
 				9F1C9D0A25975D78000AE492 /* Movie.swift in Sources */,
 				9F1C9DCB2599B580000AE492 /* MovieDetailViewController.swift in Sources */,
+				9F4C961E259A8B8F0074C8FB /* MoviesNavigationController.swift in Sources */,
 				9F1C9D982599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift in Sources */,
 				9F4C9616259A88860074C8FB /* MovieDetailViewModel.swift in Sources */,
 				9F4C960D259A86320074C8FB /* MovieDetailProtocols.swift in Sources */,

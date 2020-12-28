@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.pushViewController(movieDetail, animated: true)
     }
     
-    private lazy var navigationController = UINavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource, favoriteDataSource: favoriteDataSource) { movie in
+    private lazy var navigationController = MoviesNavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource, favoriteDataSource: favoriteDataSource) { movie in
         self.showMovieDetail(for: movie)
     })
     
