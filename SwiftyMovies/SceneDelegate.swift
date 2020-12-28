@@ -16,7 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return GraphQLMovieDataSourceFactory.makeDataSource(url: url)
     }()
     
-    private lazy var navigationController = UINavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource))
+    private func showMovieDetail(for movie: Movie) {
+        let movieDetail = MovieDetailWireframe.composeUIWith(movie: movie, dataSource: dataSource)
+        navigationController.pushViewController(movieDetail, animated: true)
+    }
+    
+    private lazy var navigationController = UINavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource) { movie in
+        self.showMovieDetail(for: movie)
+    })
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }

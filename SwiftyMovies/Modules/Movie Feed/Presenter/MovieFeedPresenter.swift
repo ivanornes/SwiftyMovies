@@ -11,10 +11,12 @@ public final class MovieFeedPresenter: MovieFeedPresenterProtocol {
     
     private weak var view: MovieFeedViewProtocol?
     private let interactor: MovieFeedInteractorInputProtocol
+    private let selection: (Movie) -> Void
     
-    public init(view: MovieFeedViewProtocol, interactor: MovieFeedInteractorInputProtocol) {
+    public init(view: MovieFeedViewProtocol, interactor: MovieFeedInteractorInputProtocol, selection: @escaping (Movie) -> Void) {
         self.view = view
         self.interactor = interactor
+        self.selection = selection
     }
     
     public func reloadData() {
@@ -25,7 +27,9 @@ public final class MovieFeedPresenter: MovieFeedPresenterProtocol {
 extension MovieFeedPresenter: MovieFeedInteractorOutputProtocol {
     public func show(_ movies: [Movie]) {
         view?.show(movies.map { movie in
-            CellController(id: movie, MovieFeedCellController(model: movie))
+            CellController(id: movie,
+                           MovieFeedCellController(model: movie,
+                                                   selection: selection))
         })
     }
 }

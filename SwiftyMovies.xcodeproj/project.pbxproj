@@ -34,6 +34,10 @@
 		9F1C9D9225994C0C000AE492 /* MovieFeedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D9125994C0C000AE492 /* MovieFeedFlowLayout.swift */; };
 		9F1C9D982599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D972599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift */; };
 		9F1C9DA12599AD46000AE492 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9F1C9DA02599AD46000AE492 /* Kingfisher */; };
+		9F1C9DBD2599B516000AE492 /* MovieDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9DBC2599B516000AE492 /* MovieDetailWireframe.swift */; };
+		9F1C9DC62599B55B000AE492 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C9DC52599B55B000AE492 /* Detail.storyboard */; };
+		9F1C9DCB2599B580000AE492 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9DCA2599B580000AE492 /* MovieDetailViewController.swift */; };
+		9F1C9DD02599B5BF000AE492 /* MovieDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9DCF2599B5BF000AE492 /* MovieDetailViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,10 @@
 		9F1C9D89259941C6000AE492 /* MovieFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedCell.swift; sourceTree = "<group>"; };
 		9F1C9D9125994C0C000AE492 /* MovieFeedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedFlowLayout.swift; sourceTree = "<group>"; };
 		9F1C9D972599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLMovieDataSourceFactory.swift; sourceTree = "<group>"; };
+		9F1C9DBC2599B516000AE492 /* MovieDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailWireframe.swift; sourceTree = "<group>"; };
+		9F1C9DC52599B55B000AE492 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		9F1C9DCA2599B580000AE492 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		9F1C9DCF2599B5BF000AE492 /* MovieDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +151,7 @@
 				9F1C9D1625975DF4000AE492 /* Movie Data Source */,
 				9F1C9D0825975D6A000AE492 /* Model */,
 				9F1C9D852599406A000AE492 /* Shared UI */,
-				9F1C9D6425993972000AE492 /* Movie Feed */,
+				9F1C9DB92599B4F0000AE492 /* Modules */,
 				9F1C9CEE259728E1000AE492 /* schema.json */,
 				9F1C9CF325972A88000AE492 /* movies.graphql */,
 				9F1C9CBE25972586000AE492 /* Assets.xcassets */,
@@ -158,6 +166,7 @@
 			children = (
 				9F1C9CCC25972587000AE492 /* SwiftyMoviesTests.swift */,
 				9F1C9D4425989C94000AE492 /* FeedCollectionViewControllerTests.swift */,
+				9F1C9DCF2599B5BF000AE492 /* MovieDetailViewControllerTests.swift */,
 				9F1C9CCE25972587000AE492 /* Info.plist */,
 			);
 			path = SwiftyMoviesTests;
@@ -279,6 +288,41 @@
 			path = "GraphQL Movie Data Source Factory";
 			sourceTree = "<group>";
 		};
+		9F1C9DB92599B4F0000AE492 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9DBA2599B4F8000AE492 /* Movie Detail */,
+				9F1C9D6425993972000AE492 /* Movie Feed */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9F1C9DBA2599B4F8000AE492 /* Movie Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9DC42599B549000AE492 /* View */,
+				9F1C9DBB2599B503000AE492 /* Wireframe */,
+			);
+			path = "Movie Detail";
+			sourceTree = "<group>";
+		};
+		9F1C9DBB2599B503000AE492 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9DBC2599B516000AE492 /* MovieDetailWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		9F1C9DC42599B549000AE492 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9DC52599B55B000AE492 /* Detail.storyboard */,
+				9F1C9DCA2599B580000AE492 /* MovieDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +439,7 @@
 				9F1C9CEF259728E1000AE492 /* schema.json in Resources */,
 				9F1C9CC225972586000AE492 /* LaunchScreen.storyboard in Resources */,
 				9F1C9CBF25972586000AE492 /* Assets.xcassets in Resources */,
+				9F1C9DC62599B55B000AE492 /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +466,7 @@
 			files = (
 				9F1C9D1225975DB3000AE492 /* Movie+GraphQL.swift in Sources */,
 				9F1C9D2225975E84000AE492 /* GraphQLMovieDatasource.swift in Sources */,
+				9F1C9DBD2599B516000AE492 /* MovieDetailWireframe.swift in Sources */,
 				9F1C9D8125994061000AE492 /* MovieFeedCellController.swift in Sources */,
 				9F1C9CB625972584000AE492 /* AppDelegate.swift in Sources */,
 				9F1C9CF9259730E7000AE492 /* API.swift in Sources */,
@@ -431,6 +477,7 @@
 				9F1C9D8A259941C6000AE492 /* MovieFeedCell.swift in Sources */,
 				9F1C9D1925975E36000AE492 /* MovieDataSource.swift in Sources */,
 				9F1C9D0A25975D78000AE492 /* Movie.swift in Sources */,
+				9F1C9DCB2599B580000AE492 /* MovieDetailViewController.swift in Sources */,
 				9F1C9D982599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift in Sources */,
 				9F1C9D7625993C10000AE492 /* MovieFeedWireframe.swift in Sources */,
 				9F1C9D4B2598D4AF000AE492 /* CellController.swift in Sources */,
@@ -444,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F1C9D4525989C94000AE492 /* FeedCollectionViewControllerTests.swift in Sources */,
+				9F1C9DD02599B5BF000AE492 /* MovieDetailViewControllerTests.swift in Sources */,
 				9F1C9CCD25972587000AE492 /* SwiftyMoviesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -589,7 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

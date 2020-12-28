@@ -13,9 +13,11 @@ public class MovieFeedCellController: NSObject, UICollectionViewDataSource {
     private let reuseIdentifier = "MovieFeedCell"
     
     private let model: Movie
+    private let selection: (Movie) -> Void
     
-    public init(model: Movie) {
+    public init(model: Movie, selection: @escaping (Movie) -> Void) {
         self.model = model
+        self.selection = selection
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -31,5 +33,11 @@ public class MovieFeedCellController: NSObject, UICollectionViewDataSource {
                                              placeholder: UIImage(named: "posterPlaceholder"))
         }
         return cell
+    }
+}
+
+extension MovieFeedCellController: UICollectionViewDelegate {
+    public func collectionView(_: UICollectionView, didSelectItemAt: IndexPath) {
+        selection(model)
     }
 }
