@@ -33,6 +33,7 @@ class FavoritesViewController: UITableViewController, FavoritesViewProtocol {
     
     private func configureTableView() {
         tableView.dataSource = dataSource
+        tableView.tableFooterView = .init()
     }
     
     private func configureDataSource() {
