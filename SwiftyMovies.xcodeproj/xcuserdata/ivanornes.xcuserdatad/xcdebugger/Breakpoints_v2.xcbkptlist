@@ -23,17 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EB8C8ABE-7E3E-4DFA-A8AB-63879B56DD5F"
-            shouldBeEnabled = "Yes"
+            uuid = "30AA6958-9211-4F09-82AD-6DCD6C931E43"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftyMovies/Modules/Favorite Movies/Interactor/FavoritesInteractor.swift"
+            filePath = "SwiftyMovies/Modules/Movie Feed/Wireframe/MovieFeedWireframe.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "loadMovies()"
-            landmarkType = "7">
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "MovieFeedWireframe"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

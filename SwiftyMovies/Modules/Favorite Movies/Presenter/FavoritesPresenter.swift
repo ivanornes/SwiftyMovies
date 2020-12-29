@@ -30,7 +30,8 @@ extension FavoritesPresenter: FavoritesInteractorOutputProtocol {
             return TableCellController(id: MovieFeedViewModel($0, isFavorite: isFavorite),
                            FavoritesCellController(model: $0,
                                                    favoriteDataSource: favoriteDataSource,
-                                                           selection: selection))
+                                                   selection: selection,
+                                                   toggledFavorite: interactor.toggledFavorite))
         })
     }
 }

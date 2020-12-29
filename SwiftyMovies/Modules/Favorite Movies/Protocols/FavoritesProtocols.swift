@@ -15,6 +15,7 @@ public protocol FavoritesPresenterProtocol: class {
 }
 
 public protocol FavoritesInteractorInputProtocol: class {
+    func toggledFavorite(_ movie: Movie)
 }
 
 public protocol FavoritesInteractorOutputProtocol: class {

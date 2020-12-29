@@ -28,26 +28,10 @@ public class MovieFeedCellController: NSObject, UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MovieFeedCell
-        cell.titleLabel.text = model.title
-        cell.posterImageView.kf.indicatorType = .activity
-        if let url = model.posterURL {
-            cell.posterImageView.kf.setImage(with: url,
-                                             placeholder: UIImage(named: "posterPlaceholder"))
-        }
-        cell.starButton.setImage(getStarImage(), for: .normal)
-        cell.starButton.addTarget(self, action: #selector(starPress(_:)), for: .touchUpInside)
+        cell.favoriteDataSource = favoriteDataSource
+        cell.model = model
+        cell.configure()
         return cell
-    }
-    
-    private func getStarImage() -> UIImage? {
-        let isFavorite = favoriteDataSource.isFavorite(id: model.id)
-        return isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
-    }
-    
-    @objc private func starPress(_ sender: UIButton) {
-        let isFavorite = favoriteDataSource.isFavorite(id: model.id)
-        favoriteDataSource.setFavorite(id: model.id, value: !isFavorite)
-        sender.setImage(getStarImage(), for: .normal)
     }
 }
 

@@ -44,7 +44,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func showFavorites() {
-        let favorites = FavoritesWireframe.composeUIWith(listDataSource: listDataSource, favoriteDataSource: favoriteDataSource) { movie in
+        let favorites = FavoritesWireframe.composeUIWith(listDataSource: listDataSource,
+                                                         detailDataSource: detailDataSource,
+                                                         favoriteDataSource: favoriteDataSource) { movie in
             self.showMovieDetail(for: movie)
         }
         navigationController.pushViewController(favorites, animated: true)

@@ -18,10 +18,15 @@ class FavoritesViewController: UITableViewController, FavoritesViewProtocol {
         })
     }()
     
+    deinit {
+        print("Favorites deinit")
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
+        configureDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +37,10 @@ class FavoritesViewController: UITableViewController, FavoritesViewProtocol {
     
     private func configureTableView() {
         tableView.dataSource = dataSource
+    }
+    
+    private func configureDataSource() {
+        dataSource.defaultRowAnimation = .top
     }
     
     public func show(_ sections: [TableCellController]...) {
