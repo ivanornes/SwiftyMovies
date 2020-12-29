@@ -18,10 +18,6 @@ class FavoritesViewController: UITableViewController, FavoritesViewProtocol {
         })
     }()
     
-    deinit {
-        print("Favorites deinit")
-    }
-    
     public override func viewDidLoad() {
         super.viewDidLoad()
         
