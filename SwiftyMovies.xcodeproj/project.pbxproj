@@ -55,6 +55,7 @@
 		9F4C9651259B34540074C8FB /* FavoritesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9650259B34540074C8FB /* FavoritesWireframe.swift */; };
 		9F4C9659259B360C0074C8FB /* FavoritesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9658259B360C0074C8FB /* FavoritesViewControllerTests.swift */; };
 		9F4C9664259B385E0074C8FB /* TableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9663259B385E0074C8FB /* TableCellController.swift */; };
+		9F4C9669259B67650074C8FB /* UserDefaultsFavoriteDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9668259B67650074C8FB /* UserDefaultsFavoriteDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		9F4C9650259B34540074C8FB /* FavoritesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWireframe.swift; sourceTree = "<group>"; };
 		9F4C9658259B360C0074C8FB /* FavoritesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerTests.swift; sourceTree = "<group>"; };
 		9F4C9663259B385E0074C8FB /* TableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellController.swift; sourceTree = "<group>"; };
+		9F4C9668259B67650074C8FB /* UserDefaultsFavoriteDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsFavoriteDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				9F1C9D4425989C94000AE492 /* FeedCollectionViewControllerTests.swift */,
 				9F1C9DCF2599B5BF000AE492 /* MovieDetailViewControllerTests.swift */,
 				9F4C9658259B360C0074C8FB /* FavoritesViewControllerTests.swift */,
+				9F4C9668259B67650074C8FB /* UserDefaultsFavoriteDataSourceTests.swift */,
 				9F1C9CCE25972587000AE492 /* Info.plist */,
 			);
 			path = SwiftyMoviesTests;
@@ -680,6 +683,7 @@
 				9F1C9D4525989C94000AE492 /* FeedCollectionViewControllerTests.swift in Sources */,
 				9F1C9DD02599B5BF000AE492 /* MovieDetailViewControllerTests.swift in Sources */,
 				9F4C9659259B360C0074C8FB /* FavoritesViewControllerTests.swift in Sources */,
+				9F4C9669259B67650074C8FB /* UserDefaultsFavoriteDataSourceTests.swift in Sources */,
 				9F1C9CCD25972587000AE492 /* SwiftyMoviesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

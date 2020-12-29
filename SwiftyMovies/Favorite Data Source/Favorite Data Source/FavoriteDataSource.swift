@@ -10,4 +10,6 @@ import Foundation
 public protocol FavoriteDataSource {
     func isFavorite(id: Int) -> Bool
     func setFavorite(id: Int, value: Bool)
+    func getFavorites() -> [Int]
+    func resetFavorites()
 }
