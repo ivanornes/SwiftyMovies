@@ -10,9 +10,9 @@ import XCTest
 
 class MovieDetailViewControllerTests: XCTestCase {
     
-    // MARK: Feed collection storyboard
+    // MARK: Movie detail storyboard
     
-    func test_movieDetailViewController_isFeedCollectionViewController() {
+    func test_movieDetailViewController_isMovieDetailViewController() {
         XCTAssertTrue(makeMovieDetailStoryboard().instantiateInitialViewController() is MovieDetailViewController)
     }
     
