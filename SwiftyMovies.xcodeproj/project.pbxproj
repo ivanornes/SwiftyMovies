@@ -24,7 +24,7 @@
 		9F1C9D33259880A9000AE492 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1C9D32259880A9000AE492 /* Feed.storyboard */; };
 		9F1C9D38259880D7000AE492 /* MovieFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D37259880D7000AE492 /* MovieFeedViewController.swift */; };
 		9F1C9D4525989C94000AE492 /* FeedCollectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D4425989C94000AE492 /* FeedCollectionViewControllerTests.swift */; };
-		9F1C9D4B2598D4AF000AE492 /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D4A2598D4AF000AE492 /* CellController.swift */; };
+		9F1C9D4B2598D4AF000AE492 /* CollectionCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D4A2598D4AF000AE492 /* CollectionCellController.swift */; };
 		9F1C9D5425993751000AE492 /* MovieFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D5325993751000AE492 /* MovieFeedPresenter.swift */; };
 		9F1C9D5D25993964000AE492 /* MovieFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D5C25993964000AE492 /* MovieFeedInteractor.swift */; };
 		9F1C9D6A259939A8000AE492 /* MovieFeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C9D69259939A8000AE492 /* MovieFeedProtocols.swift */; };
@@ -54,6 +54,7 @@
 		9F4C964C259B33F80074C8FB /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C964B259B33F80074C8FB /* FavoritesInteractor.swift */; };
 		9F4C9651259B34540074C8FB /* FavoritesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9650259B34540074C8FB /* FavoritesWireframe.swift */; };
 		9F4C9659259B360C0074C8FB /* FavoritesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9658259B360C0074C8FB /* FavoritesViewControllerTests.swift */; };
+		9F4C9664259B385E0074C8FB /* TableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9663259B385E0074C8FB /* TableCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +97,7 @@
 		9F1C9D32259880A9000AE492 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		9F1C9D37259880D7000AE492 /* MovieFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedViewController.swift; sourceTree = "<group>"; };
 		9F1C9D4425989C94000AE492 /* FeedCollectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewControllerTests.swift; sourceTree = "<group>"; };
-		9F1C9D4A2598D4AF000AE492 /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
+		9F1C9D4A2598D4AF000AE492 /* CollectionCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellController.swift; sourceTree = "<group>"; };
 		9F1C9D5325993751000AE492 /* MovieFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedPresenter.swift; sourceTree = "<group>"; };
 		9F1C9D5C25993964000AE492 /* MovieFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedInteractor.swift; sourceTree = "<group>"; };
 		9F1C9D69259939A8000AE492 /* MovieFeedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedProtocols.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		9F4C964B259B33F80074C8FB /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
 		9F4C9650259B34540074C8FB /* FavoritesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWireframe.swift; sourceTree = "<group>"; };
 		9F4C9658259B360C0074C8FB /* FavoritesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerTests.swift; sourceTree = "<group>"; };
+		9F4C9663259B385E0074C8FB /* TableCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,7 +312,8 @@
 		9F1C9D852599406A000AE492 /* Shared UI */ = {
 			isa = PBXGroup;
 			children = (
-				9F1C9D4A2598D4AF000AE492 /* CellController.swift */,
+				9F1C9D4A2598D4AF000AE492 /* CollectionCellController.swift */,
+				9F4C9663259B385E0074C8FB /* TableCellController.swift */,
 				9F4C961D259A8B8F0074C8FB /* MoviesNavigationController.swift */,
 			);
 			path = "Shared UI";
@@ -653,6 +656,7 @@
 				9F1C9D1925975E36000AE492 /* MovieDataSource.swift in Sources */,
 				9F1C9D0A25975D78000AE492 /* Movie.swift in Sources */,
 				9F4C9647259B33A70074C8FB /* FavoritesPresenter.swift in Sources */,
+				9F4C9664259B385E0074C8FB /* TableCellController.swift in Sources */,
 				9F1C9DCB2599B580000AE492 /* MovieDetailViewController.swift in Sources */,
 				9F4C961E259A8B8F0074C8FB /* MoviesNavigationController.swift in Sources */,
 				9F1C9D982599ABAF000AE492 /* GraphQLMovieDataSourceFactory.swift in Sources */,
@@ -661,7 +665,7 @@
 				9F4C9651259B34540074C8FB /* FavoritesWireframe.swift in Sources */,
 				9F4C95E2259A7B7A0074C8FB /* ErrorView.swift in Sources */,
 				9F1C9D7625993C10000AE492 /* MovieFeedWireframe.swift in Sources */,
-				9F1C9D4B2598D4AF000AE492 /* CellController.swift in Sources */,
+				9F1C9D4B2598D4AF000AE492 /* CollectionCellController.swift in Sources */,
 				9F4C95F8259A80890074C8FB /* UserDefaultsFavoriteDataSource.swift in Sources */,
 				9F1C9D9225994C0C000AE492 /* MovieFeedFlowLayout.swift in Sources */,
 				9F1C9D5D25993964000AE492 /* MovieFeedInteractor.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol MovieFeedViewProtocol: class {
-    func show(_ sections: [CellController]...)
+    func show(_ sections: [CollectionCellController]...)
     func showError()
 }
 

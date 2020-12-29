@@ -29,7 +29,7 @@ extension MovieFeedPresenter: MovieFeedInteractorOutputProtocol {
     public func show(_ movies: [Movie]) {
         view?.show(movies.map {
             let isFavorite = favoriteDataSource.isFavorite(id: $0.id)
-            return CellController(id: MovieFeedViewModel($0, isFavorite: isFavorite),
+            return CollectionCellController(id: MovieFeedViewModel($0, isFavorite: isFavorite),
                            MovieFeedCellController(model: $0,
                                                    favoriteDataSource: favoriteDataSource,
                                                            selection: selection))

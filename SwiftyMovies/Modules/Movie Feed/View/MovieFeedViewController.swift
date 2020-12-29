@@ -15,7 +15,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     var showFavorites: (() -> Void)?
     private let errorView = ErrorView()
     
-    private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CellController> = {
+    private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CollectionCellController> = {
         .init(collectionView: collectionView, cellProvider: { collectionView, indexPath, controller -> UICollectionViewCell? in
             controller.dataSource.collectionView(collectionView, cellForItemAt: indexPath)
         })
@@ -50,8 +50,8 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         showFavorites?()
     }
     
-    public func show(_ sections: [CellController]...) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, CellController>()
+    public func show(_ sections: [CollectionCellController]...) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, CollectionCellController>()
         sections.enumerated().forEach { section, cellControllers in
             snapshot.appendSections([section])
             snapshot.appendItems(cellControllers, toSection: section)
@@ -69,7 +69,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
     }
     
-    private func cellController(at indexPath: IndexPath) -> CellController? {
+    private func cellController(at indexPath: IndexPath) -> CollectionCellController? {
         dataSource.itemIdentifier(for: indexPath)
     }
     

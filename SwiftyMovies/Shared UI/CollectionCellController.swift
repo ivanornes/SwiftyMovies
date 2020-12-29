@@ -1,5 +1,5 @@
 //
-//  CellController.swift
+//  CollectionCellController.swift
 //  SwiftyMovies
 //
 //  Created by Ivan Ornes on 27/12/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct CellController {
+public struct CollectionCellController {
     let id: AnyHashable
     let dataSource: UICollectionViewDataSource
     let delegate: UICollectionViewDelegate?
@@ -21,13 +21,13 @@ public struct CellController {
     }
 }
 
-extension CellController: Equatable {
-    public static func == (lhs: CellController, rhs: CellController) -> Bool {
+extension CollectionCellController: Equatable {
+    public static func == (lhs: CollectionCellController, rhs: CollectionCellController) -> Bool {
         lhs.id == rhs.id
     }
 }
 
-extension CellController: Hashable {
+extension CollectionCellController: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
