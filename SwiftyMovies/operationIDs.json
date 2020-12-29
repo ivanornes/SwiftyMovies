@@ -2,5 +2,9 @@
   "6d90aeb2c05244873f6d313e7d2c4edc70fbde4c84c8d8371cac11395dc2c089": {
     "name": "MovieList",
     "source": "query MovieList($limit: Int = 15) {\n  movies {\n    __typename\n    popular(first: $limit) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n        }\n      }\n    }\n  }\n}"
+  },
+  "30563a28c4ddc08651a593b5f077b3f01a07c6bac396880c95fe2d3e742c3164": {
+    "name": "MovieDetail",
+    "source": "query MovieDetail($id: Int = 15) {\n  movies {\n    __typename\n    movie(id: $id) {\n      __typename\n      id\n      title\n      rating\n      poster(size: W500)\n    }\n  }\n}"
   }
 }

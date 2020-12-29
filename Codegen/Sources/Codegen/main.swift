@@ -11,7 +11,8 @@ let cliFolderURL = sourceRootURL
   .apollo.childFolderURL(folderName: "Codegen")
   .apollo.childFolderURL(folderName: "ApolloCLI")
 
-let endpoint = URL(string: "https://tmdb.apps.quintero.io")!
+//let endpoint = URL(string: "https://tmdb.apps.quintero.io")!
+let endpoint = URL(string: "http://127.0.0.1:8080")!
 
 let output = sourceRootURL
     .apollo.childFolderURL(folderName:"SwiftyMovies")

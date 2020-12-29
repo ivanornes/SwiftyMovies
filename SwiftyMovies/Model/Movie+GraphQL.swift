@@ -13,4 +13,10 @@ extension Movie {
         self.title = data.title
         self.poster =  data.poster
     }
+    
+    public init(_ data: MovieDetailQuery.Data.Movie.Movie) {
+        self.id = data.id
+        self.title = data.title
+        self.poster =  data.poster
+    }
 }

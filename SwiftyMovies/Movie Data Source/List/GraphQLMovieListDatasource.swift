@@ -1,5 +1,5 @@
 //
-//  GraphQLMovieDatasource.swift
+//  GraphQLMovieListDatasource.swift
 //  SwiftyMovies
 //
 //  Created by Ivan Ornes on 26/12/20.
@@ -8,7 +8,7 @@
 import Foundation
 import Apollo
 
-public final class GraphQLMovieDatasource: MovieDataSource {
+public final class GraphQLMovieListDatasource: MovieListDataSource {
     
     private let client: ApolloClient
     

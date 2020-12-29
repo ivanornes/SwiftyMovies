@@ -28,8 +28,8 @@ class SwiftyMoviesTests: XCTestCase {
     
     // MARK: Helpers
     
-    func makeSUT() -> MovieDataSource {
+    func makeSUT() -> MovieListDataSource {
         let apollo = ApolloClient(url: URL(string: "https://tmdb.apps.quintero.io")!)
-        return GraphQLMovieDatasource(client: apollo)
+        return GraphQLMovieListDatasource(client: apollo)
     }
 }

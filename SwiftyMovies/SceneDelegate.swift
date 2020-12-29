@@ -11,20 +11,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    private lazy var dataSource: MovieDataSource = {
+    private lazy var dataSourceFactory: GraphQLDataSourceFactory = {
         #if DEBUG
         let url = URL(string: "http://127.0.0.1:8080")!
         #else
         let url = URL(string: "https://tmdb.apps.quintero.io")!
         #endif
-        return GraphQLMovieDataSourceFactory.makeDataSource(url: url)
+        return GraphQLDataSourceFactory(url: url)
+    }()
+    
+    private lazy var listDataSource: MovieListDataSource = {
+        dataSourceFactory.makeListDataSource()
+    }()
+    
+    private lazy var detailDataSource: MovieDetailDataSource = {
+        dataSourceFactory.makeDetailDataSource()
     }()
     
     private lazy var favoriteDataSource: FavoriteDataSource = {
         UserDefaultsFavoriteDataSource()
     }()
     
-    private lazy var navigationController = MoviesNavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource, favoriteDataSource: favoriteDataSource) { movie in
+    private lazy var navigationController = MoviesNavigationController(rootViewController: MovieFeedWireframe.composeUIWith(listDataSource: listDataSource, favoriteDataSource: favoriteDataSource) { movie in
         self.showMovieDetail(for: movie)
     } showFavorites: {
         self.showFavorites()
@@ -36,7 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func showFavorites() {
-        let favorites = FavoritesWireframe.composeUIWith(dataSource: dataSource, favoriteDataSource: favoriteDataSource) { movie in
+        let favorites = FavoritesWireframe.composeUIWith(listDataSource: listDataSource, favoriteDataSource: favoriteDataSource) { movie in
             self.showMovieDetail(for: movie)
         }
         navigationController.pushViewController(favorites, animated: true)

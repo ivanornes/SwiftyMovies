@@ -24,7 +24,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureTableView()
+        configureCollectionView()
         configureNavigationBarItems()
     }
     
@@ -34,7 +34,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         reloadData?()
     }
     
-    private func configureTableView() {
+    private func configureCollectionView() {
         collectionView.dataSource = dataSource
     }
     

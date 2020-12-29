@@ -11,18 +11,18 @@ class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
     
     weak var presenter: MovieFeedInteractorOutputProtocol?
     
-    let dataSource: MovieDataSource
+    let listDataSource: MovieListDataSource
     let moviesPerPage = 15
     var currentPage = 1
     var isLoading = false
     
-    init(dataSource: MovieDataSource) {
-        self.dataSource = dataSource
+    init(listDataSource: MovieListDataSource) {
+        self.listDataSource = listDataSource
     }
     
     func loadMovies() {
         isLoading = true
-        dataSource.getMovies(limit: moviesPerPage * currentPage) { [weak self] result in
+        listDataSource.getMovies(limit: moviesPerPage * currentPage) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success(let movies): self?.presenter?.show(movies)

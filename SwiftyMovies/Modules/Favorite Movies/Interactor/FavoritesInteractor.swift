@@ -11,11 +11,15 @@ class FavoritesInteractor: FavoritesInteractorInputProtocol {
     
     weak var presenter: FavoritesInteractorOutputProtocol?
     
-    let dataSource: MovieDataSource
+    let listDataSource: MovieListDataSource
     let favoriteDataSource: FavoriteDataSource
     
-    init(dataSource: MovieDataSource, favoriteDataSource: FavoriteDataSource) {
-        self.dataSource = dataSource
+    init(listDataSource: MovieListDataSource, favoriteDataSource: FavoriteDataSource) {
+        self.listDataSource = listDataSource
         self.favoriteDataSource = favoriteDataSource
+    }
+    
+    func loadMovies() {
+        favoriteDataSource.getFavorites()
     }
 }

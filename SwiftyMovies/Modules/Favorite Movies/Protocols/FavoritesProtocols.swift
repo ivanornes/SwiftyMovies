@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol FavoritesViewProtocol: class {
+    func show(_ sections: [TableCellController]...)
 }
 
 public protocol FavoritesPresenterProtocol: class {
@@ -17,4 +18,5 @@ public protocol FavoritesInteractorInputProtocol: class {
 }
 
 public protocol FavoritesInteractorOutputProtocol: class {
+    func show(_ movies: [Movie])
 }

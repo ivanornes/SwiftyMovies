@@ -10,13 +10,17 @@ import UIKit
 public final class FavoritesWireframe {
     private init() {}
     
-    public static func composeUIWith(dataSource: MovieDataSource,
+    public static func composeUIWith(listDataSource: MovieListDataSource,
                                      favoriteDataSource: FavoriteDataSource,
                                      selection: @escaping (Movie) -> Void) -> UIViewController {
         let vc = makeFavoritesViewController(title: "Favorite Movies")
-        let interactor = FavoritesInteractor(dataSource: dataSource, favoriteDataSource: favoriteDataSource)
-        let presenter = FavoritesPresenter(view: vc, interactor: interactor)
+        let interactor = FavoritesInteractor(listDataSource: listDataSource, favoriteDataSource: favoriteDataSource)
+        let presenter = FavoritesPresenter(view: vc,
+                                           interactor: interactor,
+                                           selection: selection,
+                                           favoriteDataSource: favoriteDataSource)
         vc.presenter = presenter
+        vc.reloadData = interactor.loadMovies
         interactor.presenter = presenter
         return vc
     }

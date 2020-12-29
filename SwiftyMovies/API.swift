@@ -265,3 +265,173 @@ public final class MovieListQuery: GraphQLQuery {
     }
   }
 }
+
+public final class MovieDetailQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query MovieDetail($id: Int = 15) {
+      movies {
+        __typename
+        movie(id: $id) {
+          __typename
+          id
+          title
+          rating
+          poster(size: W500)
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "MovieDetail"
+
+  public let operationIdentifier: String? = "30563a28c4ddc08651a593b5f077b3f01a07c6bac396880c95fe2d3e742c3164"
+
+  public var id: Int?
+
+  public init(id: Int? = nil) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("movies", type: .nonNull(.object(Movie.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(movies: Movie) {
+      self.init(unsafeResultMap: ["__typename": "Query", "movies": movies.resultMap])
+    }
+
+    public var movies: Movie {
+      get {
+        return Movie(unsafeResultMap: resultMap["movies"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "movies")
+      }
+    }
+
+    public struct Movie: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Movies"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("movie", arguments: ["id": GraphQLVariable("id")], type: .nonNull(.object(Movie.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(movie: Movie) {
+        self.init(unsafeResultMap: ["__typename": "Movies", "movie": movie.resultMap])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var movie: Movie {
+        get {
+          return Movie(unsafeResultMap: resultMap["movie"]! as! ResultMap)
+        }
+        set {
+          resultMap.updateValue(newValue.resultMap, forKey: "movie")
+        }
+      }
+
+      public struct Movie: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["DetailedMovie"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(Int.self))),
+            GraphQLField("title", type: .nonNull(.scalar(String.self))),
+            GraphQLField("rating", type: .nonNull(.scalar(Double.self))),
+            GraphQLField("poster", arguments: ["size": "W500"], type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: Int, title: String, rating: Double, poster: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "DetailedMovie", "id": id, "title": title, "rating": rating, "poster": poster])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: Int {
+          get {
+            return resultMap["id"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var title: String {
+          get {
+            return resultMap["title"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "title")
+          }
+        }
+
+        public var rating: Double {
+          get {
+            return resultMap["rating"]! as! Double
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "rating")
+          }
+        }
+
+        public var poster: String? {
+          get {
+            return resultMap["poster"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "poster")
+          }
+        }
+      }
+    }
+  }
+}
