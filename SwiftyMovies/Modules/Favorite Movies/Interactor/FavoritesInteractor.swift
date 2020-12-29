@@ -32,7 +32,7 @@ class FavoritesInteractor: FavoritesInteractorInputProtocol {
                 movieDetailGroup.enter()
                 self.detailDataSource.getMovie(id: id) { result in
                     switch result {
-                    case .success(let movie): movies.append(movie)
+                    case .success(let detail): movies.append(detail.movie)
                     case .failure(_): break
                     }
                     movieDetailGroup.leave()

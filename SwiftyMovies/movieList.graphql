@@ -1,10 +1,14 @@
-query MovieDetail($id: Int = 15) {
+query MovieList($limit: Int = 15) {
   movies {
-   movie(id: $id) {
-	   id
-	   title
-	   rating
-	   poster(size:W500)
-   }
+	popular(first: $limit){
+	  edges {
+		node {
+		  id
+		  title
+		  rating
+		  poster(size:W500)
+		}
+	  }
+	}
   }
 }

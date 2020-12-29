@@ -13,6 +13,8 @@ public final class MovieDetailViewController: UIViewController, MovieDetailViewP
     var refreshData: (() -> Void)?
     var toggleFavorite: (() -> Void)?
     
+    @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
     
     public override func viewDidLoad() {
@@ -21,12 +23,15 @@ public final class MovieDetailViewController: UIViewController, MovieDetailViewP
         refreshData?()
     }
     
-    public func setTitle(_ title: String) {
+    public func setMovieTitle(_ title: String) {
+        self.title = title
     }
     
     public func setPosterImage(_ poster: String?) {
         guard let poster = poster else {
-            posterImageView.image = UIImage(named: "posterPlaceholder")
+            DispatchQueue.main.async {
+                self.posterImageView.image = UIImage(named: "posterPlaceholder")
+            }
             return
         }
         posterImageView.kf.setImage(with: URL(string: poster))
@@ -37,7 +42,9 @@ public final class MovieDetailViewController: UIViewController, MovieDetailViewP
                                    style: .plain,
                                    target: self,
                                    action: #selector(tapOnfavorite))
-        navigationItem.rightBarButtonItem = item
+        DispatchQueue.main.async {
+            self.navigationItem.rightBarButtonItem = item
+        }
     }
     
     @objc func tapOnfavorite() {
@@ -46,5 +53,17 @@ public final class MovieDetailViewController: UIViewController, MovieDetailViewP
     
     private func getStarImage(isFavorite: Bool) -> UIImage? {
         return isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+    }
+    
+    public func setOverview(_ overview: String) {
+        DispatchQueue.main.async {
+            self.overviewLabel.text = overview
+        }
+    }
+    
+    public func setRating(_ rating: String) {
+        DispatchQueue.main.async {
+            self.ratingLabel.text = rating
+        }
     }
 }

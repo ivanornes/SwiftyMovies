@@ -19,8 +19,10 @@ public final class MovieDetailPresenter: MovieDetailPresenterProtocol {
 extension MovieDetailPresenter: MovieDetailInteractorOutputProtocol {
     
     public func show(_ movieViewModel: MovieDetailViewModel) {
-        view?.setTitle(movieViewModel.title)
+        view?.setMovieTitle(movieViewModel.title)
         view?.setPosterImage(movieViewModel.poster)
         view?.setIsFavorite(movieViewModel.isFavorite)
+        view?.setOverview(movieViewModel.overview)
+        view?.setRating("\(movieViewModel.rating)")
     }
 }

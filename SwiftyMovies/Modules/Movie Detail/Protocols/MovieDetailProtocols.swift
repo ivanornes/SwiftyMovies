@@ -8,9 +8,11 @@
 import Foundation
 
 public protocol MovieDetailViewProtocol: class {
-    func setTitle(_ title: String)
+    func setMovieTitle(_ title: String)
     func setPosterImage(_ poster: String?)
     func setIsFavorite(_ isFavorite: Bool)
+    func setOverview(_ overview: String)
+    func setRating(_ rating: String)
 }
 
 public protocol MovieDetailPresenterProtocol: class {

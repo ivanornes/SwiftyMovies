@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol MovieDetailDataSource {
-    func getMovie(id: Int, onCompletion: @escaping (Result<Movie, Swift.Error>)->Void)
+    func getMovie(id: Int, onCompletion: @escaping (Result<MovieDetail, Swift.Error>)->Void)
 }

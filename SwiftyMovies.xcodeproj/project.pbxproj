@@ -61,6 +61,8 @@
 		9F4C9697259BCDC60074C8FB /* MovieDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C9696259BCDC60074C8FB /* MovieDataSource.swift */; };
 		9F4C969C259BCDF10074C8FB /* GraphQLMovieDetailDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C969B259BCDF10074C8FB /* GraphQLMovieDetailDatasource.swift */; };
 		9F4C96A4259BD0400074C8FB /* GraphQLDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96A3259BD0400074C8FB /* GraphQLDataSourceFactory.swift */; };
+		9F4C96AF259BE5920074C8FB /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96AE259BE5920074C8FB /* MovieDetail.swift */; };
+		9F4C96B4259BE5C30074C8FB /* MovieDetail+GraphQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,8 @@
 		9F4C9696259BCDC60074C8FB /* MovieDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataSource.swift; sourceTree = "<group>"; };
 		9F4C969B259BCDF10074C8FB /* GraphQLMovieDetailDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLMovieDetailDatasource.swift; sourceTree = "<group>"; };
 		9F4C96A3259BD0400074C8FB /* GraphQLDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLDataSourceFactory.swift; sourceTree = "<group>"; };
+		9F4C96AE259BE5920074C8FB /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieDetail+GraphQL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +240,8 @@
 			children = (
 				9F1C9D0925975D78000AE492 /* Movie.swift */,
 				9F1C9D1125975DB3000AE492 /* Movie+GraphQL.swift */,
+				9F4C96AE259BE5920074C8FB /* MovieDetail.swift */,
+				9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -668,6 +674,7 @@
 				9F1C9CB825972584000AE492 /* SceneDelegate.swift in Sources */,
 				9F1C9D8A259941C6000AE492 /* MovieFeedCell.swift in Sources */,
 				9F1C9D1925975E36000AE492 /* MovieListDataSource.swift in Sources */,
+				9F4C96AF259BE5920074C8FB /* MovieDetail.swift in Sources */,
 				9F1C9D0A25975D78000AE492 /* Movie.swift in Sources */,
 				9F4C9647259B33A70074C8FB /* FavoritesPresenter.swift in Sources */,
 				9F4C9664259B385E0074C8FB /* TableCellController.swift in Sources */,
@@ -679,6 +686,7 @@
 				9F4C9651259B34540074C8FB /* FavoritesWireframe.swift in Sources */,
 				9F4C95E2259A7B7A0074C8FB /* ErrorView.swift in Sources */,
 				9F4C969C259BCDF10074C8FB /* GraphQLMovieDetailDatasource.swift in Sources */,
+				9F4C96B4259BE5C30074C8FB /* MovieDetail+GraphQL.swift in Sources */,
 				9F1C9D7625993C10000AE492 /* MovieFeedWireframe.swift in Sources */,
 				9F1C9D4B2598D4AF000AE492 /* CollectionCellController.swift in Sources */,
 				9F4C95F8259A80890074C8FB /* UserDefaultsFavoriteDataSource.swift in Sources */,

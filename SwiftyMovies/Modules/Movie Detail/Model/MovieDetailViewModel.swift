@@ -11,4 +11,6 @@ public struct MovieDetailViewModel {
     public let title: String
     public let poster: String?
     public let isFavorite: Bool
+    public let overview: String
+    public let rating: Double
 }
