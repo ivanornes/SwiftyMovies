@@ -24,14 +24,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UserDefaultsFavoriteDataSource()
     }()
     
+    private lazy var navigationController = MoviesNavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource, favoriteDataSource: favoriteDataSource) { movie in
+        self.showMovieDetail(for: movie)
+    } showFavorites: {
+        self.showFavorites()
+    })
+    
     private func showMovieDetail(for movie: Movie) {
         let movieDetail = MovieDetailWireframe.composeUIWith(movie: movie, favoriteDataSource: favoriteDataSource)
         navigationController.pushViewController(movieDetail, animated: true)
     }
     
-    private lazy var navigationController = MoviesNavigationController(rootViewController: MovieFeedWireframe.composeUIWith(dataSource: dataSource, favoriteDataSource: favoriteDataSource) { movie in
-        self.showMovieDetail(for: movie)
-    })
+    private func showFavorites() {
+        let favorites = FavoritesWireframe.composeUIWith(dataSource: dataSource, favoriteDataSource: favoriteDataSource) { movie in
+            self.showMovieDetail(for: movie)
+        }
+        navigationController.pushViewController(favorites, animated: true)
+    }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }

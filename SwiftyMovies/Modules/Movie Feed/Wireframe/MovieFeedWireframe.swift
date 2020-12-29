@@ -10,7 +10,10 @@ import UIKit
 public final class MovieFeedWireframe {
     private init() {}
     
-    public static func composeUIWith(dataSource: MovieDataSource, favoriteDataSource: FavoriteDataSource, selection: @escaping (Movie) -> Void) -> UIViewController {
+    public static func composeUIWith(dataSource: MovieDataSource,
+                                     favoriteDataSource: FavoriteDataSource,
+                                     selection: @escaping (Movie) -> Void,
+                                     showFavorites: @escaping () -> Void) -> UIViewController {
         let vc = makeMovieFeedViewController(title: "Swifty Movies")
         let interactor = MovieFeedInteractor(dataSource: dataSource)
         let presenter = MovieFeedPresenter(view: vc,
@@ -20,6 +23,7 @@ public final class MovieFeedWireframe {
         vc.presenter = presenter
         vc.reloadData = interactor.loadMovies
         vc.loadNextPage = interactor.loadNextPage
+        vc.showFavorites = showFavorites
         interactor.presenter = presenter
         return vc
     }

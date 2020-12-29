@@ -12,6 +12,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     var presenter: MovieFeedPresenterProtocol?
     var reloadData: (() -> Void)?
     var loadNextPage: (() -> Void)?
+    var showFavorites: (() -> Void)?
     private let errorView = ErrorView()
     
     private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CellController> = {
@@ -24,6 +25,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         super.viewDidLoad()
         
         configureTableView()
+        configureNavigationBarItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +36,18 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     
     private func configureTableView() {
         collectionView.dataSource = dataSource
+    }
+    
+    private func configureNavigationBarItems() {
+        let item = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(favoriteTap))
+        navigationItem.leftBarButtonItem = item
+    }
+    
+    @objc private func favoriteTap() {
+        showFavorites?()
     }
     
     public func show(_ sections: [CellController]...) {
