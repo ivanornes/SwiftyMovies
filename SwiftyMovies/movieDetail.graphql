@@ -8,6 +8,7 @@ query MovieDetail($id: Int = 15) {
 	   details {
 		   overview
 	   }
+	   releaseDate
    }
   }
 }

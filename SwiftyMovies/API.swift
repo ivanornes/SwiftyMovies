@@ -21,6 +21,7 @@ public final class MovieDetailQuery: GraphQLQuery {
             __typename
             overview
           }
+          releaseDate
         }
       }
     }
@@ -28,7 +29,7 @@ public final class MovieDetailQuery: GraphQLQuery {
 
   public let operationName: String = "MovieDetail"
 
-  public let operationIdentifier: String? = "77ea4d245d131575d0986b08e39882d8cf25880db765681f9d5dd3a42f586182"
+  public let operationIdentifier: String? = "1d1256b16f458465fe0534d12284a0066e33869e3c8c351bbe4765a9d59f4c88"
 
   public var id: Int?
 
@@ -117,6 +118,7 @@ public final class MovieDetailQuery: GraphQLQuery {
             GraphQLField("rating", type: .nonNull(.scalar(Double.self))),
             GraphQLField("poster", arguments: ["size": "W500"], type: .scalar(String.self)),
             GraphQLField("details", type: .nonNull(.object(Detail.selections))),
+            GraphQLField("releaseDate", type: .scalar(String.self)),
           ]
         }
 
@@ -126,8 +128,8 @@ public final class MovieDetailQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: Int, title: String, rating: Double, poster: String? = nil, details: Detail) {
-          self.init(unsafeResultMap: ["__typename": "DetailedMovie", "id": id, "title": title, "rating": rating, "poster": poster, "details": details.resultMap])
+        public init(id: Int, title: String, rating: Double, poster: String? = nil, details: Detail, releaseDate: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "DetailedMovie", "id": id, "title": title, "rating": rating, "poster": poster, "details": details.resultMap, "releaseDate": releaseDate])
         }
 
         public var __typename: String {
@@ -181,6 +183,15 @@ public final class MovieDetailQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue.resultMap, forKey: "details")
+          }
+        }
+
+        public var releaseDate: String? {
+          get {
+            return resultMap["releaseDate"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "releaseDate")
           }
         }
 
@@ -244,6 +255,7 @@ public final class MovieListQuery: GraphQLQuery {
               title
               rating
               poster(size: W500)
+              releaseDate
             }
           }
         }
@@ -253,7 +265,7 @@ public final class MovieListQuery: GraphQLQuery {
 
   public let operationName: String = "MovieList"
 
-  public let operationIdentifier: String? = "6d90aeb2c05244873f6d313e7d2c4edc70fbde4c84c8d8371cac11395dc2c089"
+  public let operationIdentifier: String? = "0bd1f5799be583eb6be5decdcf067a734fdf65d6e1d7fc13850619d8ba61585f"
 
   public var limit: Int?
 
@@ -417,6 +429,7 @@ public final class MovieListQuery: GraphQLQuery {
                 GraphQLField("title", type: .nonNull(.scalar(String.self))),
                 GraphQLField("rating", type: .nonNull(.scalar(Double.self))),
                 GraphQLField("poster", arguments: ["size": "W500"], type: .scalar(String.self)),
+                GraphQLField("releaseDate", type: .scalar(String.self)),
               ]
             }
 
@@ -426,16 +439,16 @@ public final class MovieListQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public static func makeDetailedMovie(id: Int, title: String, rating: Double, poster: String? = nil) -> Node {
-              return Node(unsafeResultMap: ["__typename": "DetailedMovie", "id": id, "title": title, "rating": rating, "poster": poster])
+            public static func makeDetailedMovie(id: Int, title: String, rating: Double, poster: String? = nil, releaseDate: String? = nil) -> Node {
+              return Node(unsafeResultMap: ["__typename": "DetailedMovie", "id": id, "title": title, "rating": rating, "poster": poster, "releaseDate": releaseDate])
             }
 
-            public static func makeMovie(id: Int, title: String, rating: Double, poster: String? = nil) -> Node {
-              return Node(unsafeResultMap: ["__typename": "Movie", "id": id, "title": title, "rating": rating, "poster": poster])
+            public static func makeMovie(id: Int, title: String, rating: Double, poster: String? = nil, releaseDate: String? = nil) -> Node {
+              return Node(unsafeResultMap: ["__typename": "Movie", "id": id, "title": title, "rating": rating, "poster": poster, "releaseDate": releaseDate])
             }
 
-            public static func makeMovieResult(id: Int, title: String, rating: Double, poster: String? = nil) -> Node {
-              return Node(unsafeResultMap: ["__typename": "MovieResult", "id": id, "title": title, "rating": rating, "poster": poster])
+            public static func makeMovieResult(id: Int, title: String, rating: Double, poster: String? = nil, releaseDate: String? = nil) -> Node {
+              return Node(unsafeResultMap: ["__typename": "MovieResult", "id": id, "title": title, "rating": rating, "poster": poster, "releaseDate": releaseDate])
             }
 
             public var __typename: String {
@@ -480,6 +493,15 @@ public final class MovieListQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "poster")
+              }
+            }
+
+            public var releaseDate: String? {
+              get {
+                return resultMap["releaseDate"] as? String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "releaseDate")
               }
             }
           }

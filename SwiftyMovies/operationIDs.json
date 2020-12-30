@@ -1,10 +1,10 @@
 {
-  "77ea4d245d131575d0986b08e39882d8cf25880db765681f9d5dd3a42f586182": {
+  "1d1256b16f458465fe0534d12284a0066e33869e3c8c351bbe4765a9d59f4c88": {
     "name": "MovieDetail",
-    "source": "query MovieDetail($id: Int = 15) {\n  movies {\n    __typename\n    movie(id: $id) {\n      __typename\n      id\n      title\n      rating\n      poster(size: W500)\n      details {\n        __typename\n        overview\n      }\n    }\n  }\n}"
+    "source": "query MovieDetail($id: Int = 15) {\n  movies {\n    __typename\n    movie(id: $id) {\n      __typename\n      id\n      title\n      rating\n      poster(size: W500)\n      details {\n        __typename\n        overview\n      }\n      releaseDate\n    }\n  }\n}"
   },
-  "6d90aeb2c05244873f6d313e7d2c4edc70fbde4c84c8d8371cac11395dc2c089": {
+  "0bd1f5799be583eb6be5decdcf067a734fdf65d6e1d7fc13850619d8ba61585f": {
     "name": "MovieList",
-    "source": "query MovieList($limit: Int = 15) {\n  movies {\n    __typename\n    popular(first: $limit) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n        }\n      }\n    }\n  }\n}"
+    "source": "query MovieList($limit: Int = 15) {\n  movies {\n    __typename\n    popular(first: $limit) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n          releaseDate\n        }\n      }\n    }\n  }\n}"
   }
 }
