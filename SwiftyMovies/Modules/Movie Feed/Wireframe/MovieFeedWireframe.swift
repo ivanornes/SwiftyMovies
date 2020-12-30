@@ -23,6 +23,7 @@ public final class MovieFeedWireframe {
         vc.presenter = presenter
         vc.reloadData = interactor.loadMovies
         vc.loadNextPage = interactor.loadNextPage
+        vc.unlockNextPageLoadRequests = interactor.unlockNextPageLoadRequests
         vc.showFavorites = showFavorites
         interactor.presenter = presenter
         return vc

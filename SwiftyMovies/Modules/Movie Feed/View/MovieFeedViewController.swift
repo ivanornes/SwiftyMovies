@@ -13,6 +13,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
     var reloadData: (() -> Void)?
     var loadNextPage: (() -> Void)?
     var showFavorites: (() -> Void)?
+    var unlockNextPageLoadRequests: (() -> Void)?
     private let errorView = ErrorView()
     
     private lazy var dataSource: UICollectionViewDiffableDataSource<Int, CollectionCellController> = {
@@ -80,5 +81,9 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         if offsetY > contentHeight - scrollView.frame.size.height {
             loadNextPage?()
         }
+    }
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        unlockNextPageLoadRequests?()
     }
 }
