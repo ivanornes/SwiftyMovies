@@ -63,6 +63,7 @@
 		9F4C96A4259BD0400074C8FB /* GraphQLDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96A3259BD0400074C8FB /* GraphQLDataSourceFactory.swift */; };
 		9F4C96AF259BE5920074C8FB /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96AE259BE5920074C8FB /* MovieDetail.swift */; };
 		9F4C96B4259BE5C30074C8FB /* MovieDetail+GraphQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */; };
+		9F4C96C0259D1E0D0074C8FB /* APIHostResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96BF259D1E0D0074C8FB /* APIHostResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		9F4C96A3259BD0400074C8FB /* GraphQLDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLDataSourceFactory.swift; sourceTree = "<group>"; };
 		9F4C96AE259BE5920074C8FB /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieDetail+GraphQL.swift"; sourceTree = "<group>"; };
+		9F4C96BF259D1E0D0074C8FB /* APIHostResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHostResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				9F1C9CB525972584000AE492 /* AppDelegate.swift */,
 				9F1C9CB725972584000AE492 /* SceneDelegate.swift */,
 				9F1C9CF8259730E7000AE492 /* API.swift */,
+				9F4C96BF259D1E0D0074C8FB /* APIHostResolver.swift */,
 				9F4C96BE259C682D0074C8FB /* Data Sources */,
 				9F1C9D0825975D6A000AE492 /* Model */,
 				9F1C9D852599406A000AE492 /* Shared UI */,
@@ -697,6 +700,7 @@
 				9F4C96B4259BE5C30074C8FB /* MovieDetail+GraphQL.swift in Sources */,
 				9F1C9D7625993C10000AE492 /* MovieFeedWireframe.swift in Sources */,
 				9F1C9D4B2598D4AF000AE492 /* CollectionCellController.swift in Sources */,
+				9F4C96C0259D1E0D0074C8FB /* APIHostResolver.swift in Sources */,
 				9F4C95F8259A80890074C8FB /* UserDefaultsFavoriteDataSource.swift in Sources */,
 				9F1C9D9225994C0C000AE492 /* MovieFeedFlowLayout.swift in Sources */,
 				9F1C9D5D25993964000AE492 /* MovieFeedInteractor.swift in Sources */,
