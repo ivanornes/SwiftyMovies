@@ -198,8 +198,7 @@
 				9F1C9CB525972584000AE492 /* AppDelegate.swift */,
 				9F1C9CB725972584000AE492 /* SceneDelegate.swift */,
 				9F1C9CF8259730E7000AE492 /* API.swift */,
-				9F4C95E9259A7FD30074C8FB /* Favorite Data Source */,
-				9F1C9D1625975DF4000AE492 /* Movie Data Source */,
+				9F4C96BE259C682D0074C8FB /* Data Sources */,
 				9F1C9D0825975D6A000AE492 /* Model */,
 				9F1C9D852599406A000AE492 /* Shared UI */,
 				9F1C9DB92599B4F0000AE492 /* Modules */,
@@ -508,6 +507,15 @@
 				9F4C969B259BCDF10074C8FB /* GraphQLMovieDetailDatasource.swift */,
 			);
 			path = "Movie detail";
+			sourceTree = "<group>";
+		};
+		9F4C96BE259C682D0074C8FB /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9F4C95E9259A7FD30074C8FB /* Favorite Data Source */,
+				9F1C9D1625975DF4000AE492 /* Movie Data Source */,
+			);
+			path = "Data Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
