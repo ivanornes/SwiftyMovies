@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     private lazy var dataSourceFactory: GraphQLDataSourceFactory = {
-        GraphQLDataSourceFactory(url: APIHostResolver.host)
+        GraphQLDataSourceFactory(url: APIHost.production)
     }()
     
     private lazy var listDataSource: MovieListDataSource = {
