@@ -15,5 +15,6 @@ extension MovieDetail {
         self.poster = data.poster
         self.overview = data.details.overview
         self.rating = data.rating
+        self.releaseDate = data.releaseDate
     }
 }

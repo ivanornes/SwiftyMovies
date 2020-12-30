@@ -11,6 +11,7 @@ public struct Movie {
     public let id: Int
     public let title: String
     public let poster: String?
+    public let releaseDate: String?
 }
 
 extension Movie {
@@ -25,5 +26,6 @@ extension Movie: Hashable {
         hasher.combine(id)
         hasher.combine(title)
         hasher.combine(poster)
+        hasher.combine(releaseDate)
     }
 }

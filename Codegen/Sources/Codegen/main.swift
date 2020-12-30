@@ -16,6 +16,8 @@ let endpoint = URL(string: "http://127.0.0.1:8080")!
 
 let output = sourceRootURL
     .apollo.childFolderURL(folderName:"SwiftyMovies")
+    .apollo.childFolderURL(folderName:"GraphQL")
+    .apollo.childFolderURL(folderName:"Resources")
 
 try FileManager
   .default
@@ -32,6 +34,8 @@ do {
 
 let targetURL = sourceRootURL
     .apollo.childFolderURL(folderName: "SwiftyMovies")
+    .apollo.childFolderURL(folderName:"GraphQL")
+    .apollo.childFolderURL(folderName:"Resources")
 
 try FileManager
       .default

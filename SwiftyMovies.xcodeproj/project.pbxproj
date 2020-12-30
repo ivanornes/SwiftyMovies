@@ -63,6 +63,7 @@
 		9F4C96A4259BD0400074C8FB /* GraphQLDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96A3259BD0400074C8FB /* GraphQLDataSourceFactory.swift */; };
 		9F4C96AF259BE5920074C8FB /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96AE259BE5920074C8FB /* MovieDetail.swift */; };
 		9F4C96B4259BE5C30074C8FB /* MovieDetail+GraphQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */; };
+		9F4C96C0259D1E0D0074C8FB /* APIHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96BF259D1E0D0074C8FB /* APIHost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		9F4C96A3259BD0400074C8FB /* GraphQLDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLDataSourceFactory.swift; sourceTree = "<group>"; };
 		9F4C96AE259BE5920074C8FB /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieDetail+GraphQL.swift"; sourceTree = "<group>"; };
+		9F4C96BF259D1E0D0074C8FB /* APIHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,15 +199,12 @@
 			children = (
 				9F1C9CB525972584000AE492 /* AppDelegate.swift */,
 				9F1C9CB725972584000AE492 /* SceneDelegate.swift */,
-				9F1C9CF8259730E7000AE492 /* API.swift */,
-				9F4C95E9259A7FD30074C8FB /* Favorite Data Source */,
-				9F1C9D1625975DF4000AE492 /* Movie Data Source */,
+				9F4C96BF259D1E0D0074C8FB /* APIHost.swift */,
+				9F4C96CA259D208A0074C8FB /* GraphQL */,
+				9F4C96BE259C682D0074C8FB /* Data Sources */,
 				9F1C9D0825975D6A000AE492 /* Model */,
 				9F1C9D852599406A000AE492 /* Shared UI */,
 				9F1C9DB92599B4F0000AE492 /* Modules */,
-				9F1C9CEE259728E1000AE492 /* schema.json */,
-				9F1C9CF325972A88000AE492 /* movieList.graphql */,
-				9F4C9677259BCBD30074C8FB /* movieDetail.graphql */,
 				9F1C9CBE25972586000AE492 /* Assets.xcassets */,
 				9F1C9CC025972586000AE492 /* LaunchScreen.storyboard */,
 				9F1C9CC325972586000AE492 /* Info.plist */,
@@ -239,9 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				9F1C9D0925975D78000AE492 /* Movie.swift */,
-				9F1C9D1125975DB3000AE492 /* Movie+GraphQL.swift */,
 				9F4C96AE259BE5920074C8FB /* MovieDetail.swift */,
-				9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,7 +246,6 @@
 		9F1C9D1625975DF4000AE492 /* Movie Data Source */ = {
 			isa = PBXGroup;
 			children = (
-				9F4C96A3259BD0400074C8FB /* GraphQLDataSourceFactory.swift */,
 				9F4C968F259BCD390074C8FB /* Movie detail */,
 				9F4C968B259BCD200074C8FB /* List */,
 			);
@@ -495,7 +491,6 @@
 		9F4C968B259BCD200074C8FB /* List */ = {
 			isa = PBXGroup;
 			children = (
-				9F1C9D2125975E84000AE492 /* GraphQLMovieListDatasource.swift */,
 				9F1C9D1825975E36000AE492 /* MovieListDataSource.swift */,
 			);
 			path = List;
@@ -505,9 +500,65 @@
 			isa = PBXGroup;
 			children = (
 				9F4C9696259BCDC60074C8FB /* MovieDataSource.swift */,
-				9F4C969B259BCDF10074C8FB /* GraphQLMovieDetailDatasource.swift */,
 			);
 			path = "Movie detail";
+			sourceTree = "<group>";
+		};
+		9F4C96BE259C682D0074C8FB /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9F4C95E9259A7FD30074C8FB /* Favorite Data Source */,
+				9F1C9D1625975DF4000AE492 /* Movie Data Source */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+		9F4C96CA259D208A0074C8FB /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				9F4C96CE259D21E40074C8FB /* Factories */,
+				9F4C96CD259D20E80074C8FB /* Resources */,
+				9F4C96CC259D20C70074C8FB /* Data Sources */,
+				9F4C96CB259D20960074C8FB /* Model Extensions */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		9F4C96CB259D20960074C8FB /* Model Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9D1125975DB3000AE492 /* Movie+GraphQL.swift */,
+				9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */,
+			);
+			path = "Model Extensions";
+			sourceTree = "<group>";
+		};
+		9F4C96CC259D20C70074C8FB /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9F4C969B259BCDF10074C8FB /* GraphQLMovieDetailDatasource.swift */,
+				9F1C9D2125975E84000AE492 /* GraphQLMovieListDatasource.swift */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+		9F4C96CD259D20E80074C8FB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F1C9CF8259730E7000AE492 /* API.swift */,
+				9F1C9CEE259728E1000AE492 /* schema.json */,
+				9F1C9CF325972A88000AE492 /* movieList.graphql */,
+				9F4C9677259BCBD30074C8FB /* movieDetail.graphql */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F4C96CE259D21E40074C8FB /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				9F4C96A3259BD0400074C8FB /* GraphQLDataSourceFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -689,6 +740,7 @@
 				9F4C96B4259BE5C30074C8FB /* MovieDetail+GraphQL.swift in Sources */,
 				9F1C9D7625993C10000AE492 /* MovieFeedWireframe.swift in Sources */,
 				9F1C9D4B2598D4AF000AE492 /* CollectionCellController.swift in Sources */,
+				9F4C96C0259D1E0D0074C8FB /* APIHost.swift in Sources */,
 				9F4C95F8259A80890074C8FB /* UserDefaultsFavoriteDataSource.swift in Sources */,
 				9F1C9D9225994C0C000AE492 /* MovieFeedFlowLayout.swift in Sources */,
 				9F1C9D5D25993964000AE492 /* MovieFeedInteractor.swift in Sources */,

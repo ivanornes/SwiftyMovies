@@ -3,8 +3,8 @@
     "name": "MovieDetail",
     "source": "query MovieDetail($id: Int = 15) {\n  movies {\n    __typename\n    movie(id: $id) {\n      __typename\n      id\n      title\n      rating\n      poster(size: W500)\n      details {\n        __typename\n        overview\n      }\n      releaseDate\n    }\n  }\n}"
   },
-  "0bd1f5799be583eb6be5decdcf067a734fdf65d6e1d7fc13850619d8ba61585f": {
+  "8a533706dc5b75bfcba31972c133e453632443a04a107c754a228df2b6777f3e": {
     "name": "MovieList",
-    "source": "query MovieList($limit: Int = 15) {\n  movies {\n    __typename\n    popular(first: $limit) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n          releaseDate\n        }\n      }\n    }\n  }\n}"
+    "source": "query MovieList($limit: Int = 15) {\n  movies {\n    __typename\n    topRated(first: $limit) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n          releaseDate\n        }\n      }\n    }\n  }\n}"
   }
 }

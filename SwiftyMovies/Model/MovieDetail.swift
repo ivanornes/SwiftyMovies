@@ -13,6 +13,7 @@ public struct MovieDetail {
     public let poster: String?
     public let overview: String
     public let rating: Double
+    public let releaseDate: String?
 }
 
 extension MovieDetail {
@@ -24,6 +25,9 @@ extension MovieDetail {
 
 extension MovieDetail {
     var movie: Movie {
-        .init(id: id, title: title, poster: poster)
+        .init(id: id,
+              title: title,
+              poster: poster,
+              releaseDate: releaseDate)
     }
 }
