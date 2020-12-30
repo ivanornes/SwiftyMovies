@@ -17,12 +17,12 @@ public final class GraphQLMovieListDatasource: MovieListDataSource {
     }
 
     public func getMovies(limit: Int, onCompletion: @escaping (Result<[Movie], Swift.Error>)->Void) {
-        var movieList: [SwiftyMovies.MovieListQuery.Data.Movie.Popular.Edge.Node] = []
+        var movieList: [SwiftyMovies.MovieListQuery.Data.Movie.TopRated.Edge.Node] = []
         let query = MovieListQuery(limit: limit)
         let _ = client.fetch(query: query) { result in
             switch result {
             case .success(let graphQLResult):
-                let fetchedMovies = graphQLResult.data?.movies.popular.edges?.compactMap { $0?.node } ?? []
+                let fetchedMovies = graphQLResult.data?.movies.topRated.edges?.compactMap { $0?.node } ?? []
                 movieList.append(contentsOf: fetchedMovies)
                 onCompletion(.success(movieList.map(Movie.init)))
             case .failure(let error):

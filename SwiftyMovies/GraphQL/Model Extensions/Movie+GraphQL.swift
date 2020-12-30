@@ -8,7 +8,7 @@
 import Foundation
 
 extension Movie {
-    public init(_ data: MovieListQuery.Data.Movie.Popular.Edge.Node) {
+    public init(_ data: MovieListQuery.Data.Movie.TopRated.Edge.Node) {
         self.id = data.id
         self.title = data.title
         self.poster = data.poster

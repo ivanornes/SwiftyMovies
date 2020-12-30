@@ -245,7 +245,7 @@ public final class MovieListQuery: GraphQLQuery {
     query MovieList($limit: Int = 15) {
       movies {
         __typename
-        popular(first: $limit) {
+        topRated(first: $limit) {
           __typename
           edges {
             __typename
@@ -265,7 +265,7 @@ public final class MovieListQuery: GraphQLQuery {
 
   public let operationName: String = "MovieList"
 
-  public let operationIdentifier: String? = "0bd1f5799be583eb6be5decdcf067a734fdf65d6e1d7fc13850619d8ba61585f"
+  public let operationIdentifier: String? = "8a533706dc5b75bfcba31972c133e453632443a04a107c754a228df2b6777f3e"
 
   public var limit: Int?
 
@@ -311,7 +311,7 @@ public final class MovieListQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("popular", arguments: ["first": GraphQLVariable("limit")], type: .nonNull(.object(Popular.selections))),
+          GraphQLField("topRated", arguments: ["first": GraphQLVariable("limit")], type: .nonNull(.object(TopRated.selections))),
         ]
       }
 
@@ -321,8 +321,8 @@ public final class MovieListQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(popular: Popular) {
-        self.init(unsafeResultMap: ["__typename": "Movies", "popular": popular.resultMap])
+      public init(topRated: TopRated) {
+        self.init(unsafeResultMap: ["__typename": "Movies", "topRated": topRated.resultMap])
       }
 
       public var __typename: String {
@@ -334,16 +334,16 @@ public final class MovieListQuery: GraphQLQuery {
         }
       }
 
-      public var popular: Popular {
+      public var topRated: TopRated {
         get {
-          return Popular(unsafeResultMap: resultMap["popular"]! as! ResultMap)
+          return TopRated(unsafeResultMap: resultMap["topRated"]! as! ResultMap)
         }
         set {
-          resultMap.updateValue(newValue.resultMap, forKey: "popular")
+          resultMap.updateValue(newValue.resultMap, forKey: "topRated")
         }
       }
 
-      public struct Popular: GraphQLSelectionSet {
+      public struct TopRated: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["MovieConnection"]
 
         public static var selections: [GraphQLSelection] {
