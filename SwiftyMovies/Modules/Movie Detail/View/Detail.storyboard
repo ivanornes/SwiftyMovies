@@ -17,10 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT6-O1-SfZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="828"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lT6-O1-SfZ" secondAttribute="height" multiplier="1:2" id="PWk-Vu-U7z"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDA-31-isL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -67,21 +64,22 @@
                         <viewLayoutGuide key="safeArea" id="uC2-ih-aZv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="lT6-O1-SfZ" firstAttribute="leading" secondItem="iaO-Ua-kyQ" secondAttribute="leading" id="49K-uv-Oa1"/>
                             <constraint firstItem="FME-rT-Pcb" firstAttribute="bottom" secondItem="8Hd-J1-RLQ" secondAttribute="bottom" constant="10" id="EKZ-Cb-Otb"/>
                             <constraint firstItem="eDA-31-isL" firstAttribute="top" secondItem="iaO-Ua-kyQ" secondAttribute="top" id="Gfp-QY-m56"/>
+                            <constraint firstAttribute="trailing" secondItem="lT6-O1-SfZ" secondAttribute="trailing" id="H4z-OU-Uag"/>
                             <constraint firstItem="8Hd-J1-RLQ" firstAttribute="top" secondItem="uC2-ih-aZv" secondAttribute="top" constant="40" id="NCQ-hV-spk"/>
-                            <constraint firstItem="lT6-O1-SfZ" firstAttribute="leading" secondItem="iaO-Ua-kyQ" secondAttribute="leading" id="Pkd-d9-Rme"/>
                             <constraint firstItem="5e0-yK-VXO" firstAttribute="top" secondItem="uC2-ih-aZv" secondAttribute="top" constant="10" id="SRb-Ws-1Hf"/>
                             <constraint firstItem="uC2-ih-aZv" firstAttribute="trailing" secondItem="8Hd-J1-RLQ" secondAttribute="trailing" constant="20" id="V1a-MN-YvT"/>
                             <constraint firstAttribute="bottom" secondItem="eDA-31-isL" secondAttribute="bottom" id="VTR-aY-EUZ"/>
                             <constraint firstItem="5e0-yK-VXO" firstAttribute="leading" secondItem="uC2-ih-aZv" secondAttribute="leading" constant="10" id="YZQ-6v-2WN"/>
+                            <constraint firstItem="lT6-O1-SfZ" firstAttribute="top" secondItem="iaO-Ua-kyQ" secondAttribute="top" id="Ym8-m7-Xfs"/>
                             <constraint firstAttribute="trailing" secondItem="eDA-31-isL" secondAttribute="trailing" id="b7K-QO-GS0"/>
                             <constraint firstItem="FME-rT-Pcb" firstAttribute="trailing" secondItem="8Hd-J1-RLQ" secondAttribute="trailing" constant="10" id="bR9-2l-k5g"/>
                             <constraint firstItem="8Hd-J1-RLQ" firstAttribute="leading" secondItem="uC2-ih-aZv" secondAttribute="leading" constant="20" id="ckA-Ra-f7u"/>
                             <constraint firstItem="eDA-31-isL" firstAttribute="leading" secondItem="iaO-Ua-kyQ" secondAttribute="leading" id="ghb-Se-6Xg"/>
-                            <constraint firstItem="lT6-O1-SfZ" firstAttribute="top" secondItem="uC2-ih-aZv" secondAttribute="top" id="luw-EK-WI3"/>
-                            <constraint firstAttribute="trailing" secondItem="lT6-O1-SfZ" secondAttribute="trailing" id="ogt-zp-pP4"/>
                             <constraint firstItem="FME-rT-Pcb" firstAttribute="top" secondItem="8Hd-J1-RLQ" secondAttribute="top" constant="-10" id="tLE-Ep-bUn"/>
+                            <constraint firstAttribute="bottom" secondItem="lT6-O1-SfZ" secondAttribute="bottom" id="uMs-qp-1en"/>
                             <constraint firstItem="FME-rT-Pcb" firstAttribute="leading" secondItem="8Hd-J1-RLQ" secondAttribute="leading" constant="-10" id="uZn-VR-gT4"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
