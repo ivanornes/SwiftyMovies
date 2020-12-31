@@ -57,7 +57,12 @@ public final class MovieDetailViewController: UIViewController, MovieDetailViewP
     
     public func setOverview(_ overview: String) {
         DispatchQueue.main.async {
-            self.overviewLabel.text = overview
+            UIView.transition(with: self.overviewLabel,
+                          duration: 0.25,
+                          options: .transitionCrossDissolve,
+                        animations: { [weak self] in
+                            self?.overviewLabel.text = overview
+                     }, completion: nil)
         }
     }
     
