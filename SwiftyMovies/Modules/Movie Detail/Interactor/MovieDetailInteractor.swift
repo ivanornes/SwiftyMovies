@@ -21,16 +21,25 @@ public final class MovieDetailInteractor: MovieDetailInteractorInputProtocol {
     }
     
     func loadData() {
-        let isFavorite = favoriteDataSource.isFavorite(id: movie.id)
+        mapAndPresentMovie(movie)
         movieDetailDataSource.getMovie(id: movie.id) { result in
             switch result {
-            case .success(let detail):
-                let movieViewModel = MovieDetailViewModel(title: detail.title, poster: detail.poster, isFavorite: isFavorite, overview: detail.overview,
-                                                          rating: detail.rating)
-                self.presenter?.show(movieViewModel)
+            case .success(let detail): self.mapAndPresentMovieDetail(detail)
             case .failure(_): break
             }
         }
+    }
+
+    func mapAndPresentMovie(_ movie: Movie) {
+        let isFavorite = favoriteDataSource.isFavorite(id: movie.id)
+        let movieViewModel = MovieDetailViewModel(movie, isFavorite: isFavorite)
+        presenter?.show(movieViewModel)
+    }
+    
+    func mapAndPresentMovieDetail(_ detail: MovieDetail) {
+        let isFavorite = favoriteDataSource.isFavorite(id: movie.id)
+        let movieViewModel = MovieDetailViewModel(detail, isFavorite: isFavorite)
+        presenter?.show(movieViewModel)
     }
     
     func toggleFavorite() {

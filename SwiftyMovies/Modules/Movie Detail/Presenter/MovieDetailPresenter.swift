@@ -22,7 +22,13 @@ extension MovieDetailPresenter: MovieDetailInteractorOutputProtocol {
         view?.setMovieTitle(movieViewModel.title)
         view?.setPosterImage(movieViewModel.poster)
         view?.setIsFavorite(movieViewModel.isFavorite)
-        view?.setOverview(movieViewModel.overview)
-        view?.setRating("\(movieViewModel.rating)")
+        if let overview = movieViewModel.overview {
+            view?.setOverview(overview)
+        }
+        if let rating = movieViewModel.rating {
+            view?.setRating("\(rating)")
+        } else {
+            view?.setRating("-")
+        }
     }
 }
