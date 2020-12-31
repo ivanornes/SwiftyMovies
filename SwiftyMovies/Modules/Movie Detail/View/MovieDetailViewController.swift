@@ -42,8 +42,12 @@ public final class MovieDetailViewController: UIViewController, MovieDetailViewP
                                    style: .plain,
                                    target: self,
                                    action: #selector(tapOnfavorite))
-        DispatchQueue.main.async {
-            self.navigationItem.rightBarButtonItem = item
+        if Thread.isMainThread {
+            navigationItem.rightBarButtonItem = item
+        } else {
+            DispatchQueue.main.async {
+                self.navigationItem.rightBarButtonItem = item
+            }
         }
     }
     
