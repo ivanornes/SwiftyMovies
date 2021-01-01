@@ -27,9 +27,7 @@ public final class MovieDetailWireframe {
     }
     
     private static func makeMovieDetailViewController(title: String) -> MovieDetailViewController {
-        let bundle = Bundle(for: MovieFeedViewController.self)
-        let storyboard = UIStoryboard(name: "Detail", bundle: bundle)
-        let detailController = storyboard.instantiateInitialViewController() as! MovieDetailViewController
+        let detailController = MovieDetailViewController.instantiateInitialViewController(from: "Detail")
         detailController.title = title
         return detailController
     }

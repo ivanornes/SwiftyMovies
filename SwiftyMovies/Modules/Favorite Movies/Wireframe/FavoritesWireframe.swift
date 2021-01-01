@@ -29,10 +29,8 @@ public final class FavoritesWireframe {
     }
     
     private static func makeFavoritesViewController(title: String) -> FavoritesViewController {
-        let bundle = Bundle(for: MovieFeedViewController.self)
-        let storyboard = UIStoryboard(name: "Favorites", bundle: bundle)
-        let feedController = storyboard.instantiateInitialViewController() as! FavoritesViewController
-        feedController.title = title
-        return feedController
+        let favoritesController = FavoritesViewController.instantiateInitialViewController(from: "Favorites")
+        favoritesController.title = title
+        return favoritesController
     }
 }

@@ -64,6 +64,7 @@
 		9F4C96AF259BE5920074C8FB /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96AE259BE5920074C8FB /* MovieDetail.swift */; };
 		9F4C96B4259BE5C30074C8FB /* MovieDetail+GraphQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */; };
 		9F4C96C0259D1E0D0074C8FB /* APIHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4C96BF259D1E0D0074C8FB /* APIHost.swift */; };
+		9FB0AC56259FC3740080DAF8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0AC55259FC3740080DAF8 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		9F4C96AE259BE5920074C8FB /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		9F4C96B3259BE5C30074C8FB /* MovieDetail+GraphQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieDetail+GraphQL.swift"; sourceTree = "<group>"; };
 		9F4C96BF259D1E0D0074C8FB /* APIHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHost.swift; sourceTree = "<group>"; };
+		9FB0AC55259FC3740080DAF8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 				9F1C9D4A2598D4AF000AE492 /* CollectionCellController.swift */,
 				9F4C9663259B385E0074C8FB /* TableCellController.swift */,
 				9F4C961D259A8B8F0074C8FB /* MoviesNavigationController.swift */,
+				9FB0AC55259FC3740080DAF8 /* UIViewController+Extension.swift */,
 			);
 			path = "Shared UI";
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				9F4C95FE259A85EC0074C8FB /* MovieDetailInteractor.swift in Sources */,
 				9F1C9D38259880D7000AE492 /* MovieFeedViewController.swift in Sources */,
 				9F1C9D5425993751000AE492 /* MovieFeedPresenter.swift in Sources */,
+				9FB0AC56259FC3740080DAF8 /* UIViewController+Extension.swift in Sources */,
 				9F1C9CB825972584000AE492 /* SceneDelegate.swift in Sources */,
 				9F1C9D8A259941C6000AE492 /* MovieFeedCell.swift in Sources */,
 				9F1C9D1925975E36000AE492 /* MovieListDataSource.swift in Sources */,

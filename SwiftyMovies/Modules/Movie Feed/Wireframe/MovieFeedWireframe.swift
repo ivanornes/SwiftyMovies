@@ -30,9 +30,7 @@ public final class MovieFeedWireframe {
     }
     
     private static func makeMovieFeedViewController(title: String) -> MovieFeedViewController {
-        let bundle = Bundle(for: MovieFeedViewController.self)
-        let storyboard = UIStoryboard(name: "Feed", bundle: bundle)
-        let feedController = storyboard.instantiateInitialViewController() as! MovieFeedViewController
+        let feedController = MovieFeedViewController.instantiateInitialViewController(from: "Feed")
         feedController.title = title
         return feedController
     }
