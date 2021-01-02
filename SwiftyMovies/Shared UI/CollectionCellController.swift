@@ -11,13 +11,11 @@ public struct CollectionCellController {
     let id: AnyHashable
     let dataSource: UICollectionViewDataSource
     let delegate: UICollectionViewDelegate?
-    let dataSourcePrefetching: UICollectionViewDataSourcePrefetching?
     
     public init(id: AnyHashable, _ dataSource: UICollectionViewDataSource) {
         self.id = id
         self.dataSource = dataSource
         self.delegate = dataSource as? UICollectionViewDelegate
-        self.dataSourcePrefetching = dataSource as? UICollectionViewDataSourcePrefetching
     }
 }
 
