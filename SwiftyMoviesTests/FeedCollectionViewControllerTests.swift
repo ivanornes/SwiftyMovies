@@ -21,10 +21,4 @@ class MovieFeedViewControllerTests: XCTestCase {
     func makeFeedStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Feed", bundle: nil)
     }
-    
-    func makeMovieFeedViewController(storyboard: UIStoryboard) -> MovieFeedViewController {
-        let vc = storyboard.instantiateInitialViewController() as! MovieFeedViewController
-        _ = vc.view
-        return vc
-    }
 }

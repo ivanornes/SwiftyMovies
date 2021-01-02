@@ -21,10 +21,4 @@ class MovieDetailViewControllerTests: XCTestCase {
     func makeMovieDetailStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Detail", bundle: nil)
     }
-    
-    func makeMovieDetailViewController(storyboard: UIStoryboard) -> MovieDetailViewController {
-        let vc = storyboard.instantiateInitialViewController() as! MovieDetailViewController
-        _ = vc.view
-        return vc
-    }
 }

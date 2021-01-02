@@ -21,10 +21,4 @@ class FavoritesViewControllerTests: XCTestCase {
     func makeFavoritesStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Favorites", bundle: nil)
     }
-    
-    func makeFavoritesViewController(storyboard: UIStoryboard) -> FavoritesViewController {
-        let vc = storyboard.instantiateInitialViewController() as! FavoritesViewController
-        _ = vc.view
-        return vc
-    }
 }
