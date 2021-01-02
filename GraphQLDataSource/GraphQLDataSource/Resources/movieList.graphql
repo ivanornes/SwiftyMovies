@@ -1,0 +1,15 @@
+query MovieList($limit: Int = 15) {
+  movies {
+	  topRated(first: $limit){
+	  edges {
+		node {
+		  id
+		  title
+		  rating
+		  poster(size:W500)
+		  releaseDate
+		}
+	  }
+	}
+  }
+}

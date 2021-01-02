@@ -1,0 +1,14 @@
+query MovieDetail($id: Int = 15) {
+  movies {
+   movie(id: $id) {
+	   id
+	   title
+	   rating
+	   poster(size:W500)
+	   details {
+		   overview
+	   }
+	   releaseDate
+   }
+  }
+}

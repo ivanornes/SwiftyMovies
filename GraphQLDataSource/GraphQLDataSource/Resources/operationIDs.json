@@ -1,0 +1,10 @@
+{
+  "1d1256b16f458465fe0534d12284a0066e33869e3c8c351bbe4765a9d59f4c88": {
+    "name": "MovieDetail",
+    "source": "query MovieDetail($id: Int = 15) {\n  movies {\n    __typename\n    movie(id: $id) {\n      __typename\n      id\n      title\n      rating\n      poster(size: W500)\n      details {\n        __typename\n        overview\n      }\n      releaseDate\n    }\n  }\n}"
+  },
+  "8a533706dc5b75bfcba31972c133e453632443a04a107c754a228df2b6777f3e": {
+    "name": "MovieList",
+    "source": "query MovieList($limit: Int = 15) {\n  movies {\n    __typename\n    topRated(first: $limit) {\n      __typename\n      edges {\n        __typename\n        node {\n          __typename\n          id\n          title\n          rating\n          poster(size: W500)\n          releaseDate\n        }\n      }\n    }\n  }\n}"
+  }
+}
