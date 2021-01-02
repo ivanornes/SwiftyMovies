@@ -1,15 +1,15 @@
 //
-//  SwiftyMoviesTests.swift
-//  SwiftyMoviesTests
+//  MovieListDataSourceTests.swift
+//  MovieListDataSourceTests
 //
 //  Created by Ivan Ornes on 26/12/20.
 //
 
 import XCTest
-import Apollo
+import GraphQLDataSource
 @testable import SwiftyMovies
 
-class SwiftyMoviesTests: XCTestCase {
+class MovieListDataSourceTests: XCTestCase {
 
     func test_NetworkTransport_movieListQueryReturnsData() {
         let sut = makeSUT()
@@ -29,7 +29,7 @@ class SwiftyMoviesTests: XCTestCase {
     // MARK: Helpers
     
     func makeSUT() -> MovieListDataSource {
-        let apollo = ApolloClient(url: URL(string: "https://tmdb.apps.quintero.io")!)
-        return GraphQLMovieListDatasource(client: apollo)
+        let factory = GraphQLDataFetcherFactory(url: APIHost.production)
+        return GraphQLMovieListDataSource(fetcher: factory.makeListDataFetcher())
     }
 }

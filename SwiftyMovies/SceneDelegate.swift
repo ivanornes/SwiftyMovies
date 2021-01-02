@@ -6,23 +6,24 @@
 //
 
 import UIKit
+import GraphQLDataSource
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    private lazy var dataSourceFactory: GraphQLDataSourceFactory = {
-        GraphQLDataSourceFactory(url: APIHost.production)
+    private lazy var dataFetcherFactory: GraphQLDataFetcherFactory = {
+        GraphQLDataFetcherFactory(url: APIHost.production)
     }()
     
     private lazy var listDataSource: MovieListDataSource = {
-        dataSourceFactory.makeListDataSource()
+        GraphQLMovieListDataSource(fetcher: dataFetcherFactory.makeListDataFetcher())
     }()
-    
+
     private lazy var detailDataSource: MovieDetailDataSource = {
-        dataSourceFactory.makeDetailDataSource()
+        GraphQLMovieDetailDataSource(fetcher: dataFetcherFactory.makeDetailDataFetcher())
     }()
-    
+
     private lazy var favoriteDataSource: FavoriteDataSource = {
         UserDefaultsFavoriteDataSource()
     }()
@@ -32,14 +33,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     } showFavorites: {
         self.showFavorites()
     })
-    
+
     private func showMovieDetail(for movie: Movie) {
         let movieDetail = MovieDetailWireframe.composeUIWith(movie: movie,
                                                              movieDetailDataSource: detailDataSource,
                                                              favoriteDataSource: favoriteDataSource)
         navigationController.pushViewController(movieDetail, animated: true)
     }
-    
+
     private func showFavorites() {
         let favorites = FavoritesWireframe.composeUIWith(listDataSource: listDataSource,
                                                          detailDataSource: detailDataSource,

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GraphQLDataSource
 
 extension Movie {
     public init(_ data: MovieListQuery.Data.Movie.TopRated.Edge.Node) {
