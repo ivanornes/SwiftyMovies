@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-public class MovieFeedCellController: NSObject, UICollectionViewDataSource {
+public final class MovieFeedCellController: NSObject, UICollectionViewDataSource {
     
     private let reuseIdentifier = "MovieFeedCell"
     
@@ -22,9 +22,7 @@ public class MovieFeedCellController: NSObject, UICollectionViewDataSource {
         self.selection = selection
     }
     
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
-    }
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { 1 }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MovieFeedCell

@@ -7,4 +7,4 @@
 
 import UIKit
 
-public class MoviesNavigationController: UINavigationController {}
+public final class MoviesNavigationController: UINavigationController {}

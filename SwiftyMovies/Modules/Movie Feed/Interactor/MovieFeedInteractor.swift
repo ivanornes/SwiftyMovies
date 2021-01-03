@@ -7,21 +7,21 @@
 
 import Foundation
 
-class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
+public final class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
     
-    weak var presenter: MovieFeedInteractorOutputProtocol?
+    public weak var presenter: MovieFeedInteractorOutputProtocol?
     
-    let listDataSource: MovieListDataSource
-    let moviesPerPage = 15
-    var currentPage = 1
-    var isLoading = false
-    var lockNextRequests = false
+    private let listDataSource: MovieListDataSource
+    private let moviesPerPage = 15
+    private var currentPage = 1
+    private var isLoading = false
+    private var lockNextRequests = false
     
-    init(listDataSource: MovieListDataSource) {
+    public init(listDataSource: MovieListDataSource) {
         self.listDataSource = listDataSource
     }
     
-    func loadMovies() {
+    public func loadMovies() {
         isLoading = true
         listDataSource.getMovies(limit: moviesPerPage * currentPage) { [weak self] result in
             self?.processResult(result)
@@ -29,7 +29,7 @@ class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
         }
     }
     
-    func processResult(_ result: Result<[Movie], Error>) {
+    private func processResult(_ result: Result<[Movie], Error>) {
         switch result {
         case .success(let movies):
             guard !movies.isEmpty else { return }
@@ -38,14 +38,14 @@ class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
         }
     }
     
-    func loadNextPage() {
+    public func loadNextPage() {
         guard !isLoading && !lockNextRequests else { return }
         lockNextRequests = true
         currentPage += 1
         loadMovies()
     }
     
-    func unlockNextPageLoadRequests() {
+    public func unlockNextPageLoadRequests() {
         lockNextRequests = false
     }
 }

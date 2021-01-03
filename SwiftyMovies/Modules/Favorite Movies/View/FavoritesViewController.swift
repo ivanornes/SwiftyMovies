@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesViewController: UITableViewController, FavoritesViewProtocol {
+public final class FavoritesViewController: UITableViewController, FavoritesViewProtocol {
 
     var presenter: FavoritesPresenterProtocol?
     var reloadData: (() -> Void)?
@@ -25,7 +25,7 @@ class FavoritesViewController: UITableViewController, FavoritesViewProtocol {
         configureDataSource()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         reloadData?()
@@ -49,7 +49,7 @@ class FavoritesViewController: UITableViewController, FavoritesViewProtocol {
         dataSource.apply(snapshot)
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let delegate = cellController(at: indexPath)?.delegate
         delegate?.tableView?(tableView, didSelectRowAt: indexPath)
     }

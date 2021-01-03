@@ -16,6 +16,9 @@ public protocol MovieFeedPresenterProtocol: class {
 }
 
 public protocol MovieFeedInteractorInputProtocol: class {
+    func loadMovies()
+    func loadNextPage()
+    func unlockNextPageLoadRequests()
 }
 
 public protocol MovieFeedInteractorOutputProtocol: class {

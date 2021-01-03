@@ -7,15 +7,15 @@
 
 import Foundation
 
-class FavoritesInteractor: FavoritesInteractorInputProtocol {
+public final class FavoritesInteractor: FavoritesInteractorInputProtocol {
     
-    weak var presenter: FavoritesInteractorOutputProtocol?
+    public weak var presenter: FavoritesInteractorOutputProtocol?
     
-    let listDataSource: MovieListDataSource
-    let detailDataSource: MovieDetailDataSource
-    let favoriteDataSource: FavoriteDataSource
+    private let listDataSource: MovieListDataSource
+    private let detailDataSource: MovieDetailDataSource
+    private let favoriteDataSource: FavoriteDataSource
     
-    init(listDataSource: MovieListDataSource,
+    public init(listDataSource: MovieListDataSource,
          detailDataSource: MovieDetailDataSource,
          favoriteDataSource: FavoriteDataSource) {
         self.listDataSource = listDataSource
@@ -23,7 +23,7 @@ class FavoritesInteractor: FavoritesInteractorInputProtocol {
         self.favoriteDataSource = favoriteDataSource
     }
     
-    func loadMovies() {
+    public func loadMovies() {
         DispatchQueue.global(qos: .userInitiated).async {
             let movieDetailGroup = DispatchGroup()
             var movies: [Movie] = []
@@ -45,7 +45,7 @@ class FavoritesInteractor: FavoritesInteractorInputProtocol {
         }
     }
     
-    func toggledFavorite(_ movie: Movie) {
+    public func toggledFavorite(_ movie: Movie) {
         loadMovies()
     }
 }

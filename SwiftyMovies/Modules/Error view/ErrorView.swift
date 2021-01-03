@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ErrorView: UIViewController {
+public final class ErrorView: UIViewController {
     
-    lazy var errorLabel: UILabel = {
+    private lazy var errorLabel: UILabel = {
         let label: UILabel = .init(frame: .zero)
         label.textAlignment = .center
         label.backgroundColor = .label
@@ -18,7 +18,7 @@ class ErrorView: UIViewController {
         return label
     }()
     
-    var errorText: String? {
+    public var errorText: String? {
         get {
             return errorLabel.text
         }
@@ -27,11 +27,11 @@ class ErrorView: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewWillLayoutSubviews() {
+    public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         errorLabel.frame = view.bounds
     }

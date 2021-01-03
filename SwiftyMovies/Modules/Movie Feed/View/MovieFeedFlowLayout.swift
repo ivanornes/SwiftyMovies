@@ -7,11 +7,11 @@
 
 import UIKit
 
-class MovieFeedFlowLayout: UICollectionViewFlowLayout {
+public final class MovieFeedFlowLayout: UICollectionViewFlowLayout {
     
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool { true }
+    public override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool { true }
     
-    override func prepare() {
+    public override func prepare() {
         guard let collectionView = collectionView else { return }
         
         let cellWidth = collectionView.bounds.inset(by: collectionView.layoutMargins).width

@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-public class FavoritesCellController: NSObject, UITableViewDataSource {
+public final class FavoritesCellController: NSObject, UITableViewDataSource {
     
     private let reuseIdentifier = "FavoritesCell"
     
@@ -24,9 +24,7 @@ public class FavoritesCellController: NSObject, UITableViewDataSource {
         self.toggledFavorite = toggledFavorite
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 1 }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! FavoritesCell

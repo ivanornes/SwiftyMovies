@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MovieFeedViewController: UICollectionViewController, MovieFeedViewProtocol {
+public final class MovieFeedViewController: UICollectionViewController, MovieFeedViewProtocol {
     
     var presenter: MovieFeedPresenterProtocol?
     var reloadData: (() -> Void)?
@@ -29,7 +29,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         configureNavigationBarItems()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         reloadData?()
@@ -65,7 +65,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         present(errorView, animated: true, completion: nil)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let delegate = cellController(at: indexPath)?.delegate
         delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
     }
@@ -74,7 +74,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         dataSource.itemIdentifier(for: indexPath)
     }
     
-    internal override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView.isDragging else { return }
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -83,7 +83,7 @@ final class MovieFeedViewController: UICollectionViewController, MovieFeedViewPr
         }
     }
     
-    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         unlockNextPageLoadRequests?()
     }
 }
