@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		9F2EFCA325A04F2200B19E06 /* GraphQLDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB0AC64259FC47B0080DAF8 /* GraphQLDataSource.framework */; };
 		9F2EFCA425A04F2200B19E06 /* GraphQLDataSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB0AC64259FC47B0080DAF8 /* GraphQLDataSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F2EFCB125A1AE0C00B19E06 /* GraphQLMovieListDataFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2EFCB025A1AE0C00B19E06 /* GraphQLMovieListDataFetcherTests.swift */; };
+		9F2EFCB725A1AE3100B19E06 /* GraphQLMovieDetailDataFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2EFCB625A1AE3100B19E06 /* GraphQLMovieDetailDataFetcherTests.swift */; };
 		9FB0AC6E259FC47B0080DAF8 /* GraphQLDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB0AC64259FC47B0080DAF8 /* GraphQLDataSource.framework */; };
-		9FB0AC73259FC47B0080DAF8 /* GraphQLDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0AC72259FC47B0080DAF8 /* GraphQLDataSourceTests.swift */; };
 		9FB0ACF6259FC5D60080DAF8 /* GraphQLMovieDetailDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0ACEA259FC5D60080DAF8 /* GraphQLMovieDetailDataFetcher.swift */; };
 		9FB0ACF7259FC5D60080DAF8 /* GraphQLMovieListDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0ACEB259FC5D60080DAF8 /* GraphQLMovieListDataFetcher.swift */; };
 		9FB0ACF8259FC5D60080DAF8 /* movieDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9FB0ACED259FC5D60080DAF8 /* movieDetail.graphql */; };
@@ -58,10 +59,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F2EFCB025A1AE0C00B19E06 /* GraphQLMovieListDataFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLMovieListDataFetcherTests.swift; sourceTree = "<group>"; };
+		9F2EFCB625A1AE3100B19E06 /* GraphQLMovieDetailDataFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLMovieDetailDataFetcherTests.swift; sourceTree = "<group>"; };
 		9FB0AC64259FC47B0080DAF8 /* GraphQLDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphQLDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB0AC68259FC47B0080DAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB0AC6D259FC47B0080DAF8 /* GraphQLDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphQLDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FB0AC72259FC47B0080DAF8 /* GraphQLDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLDataSourceTests.swift; sourceTree = "<group>"; };
 		9FB0AC74259FC47B0080DAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB0ACEA259FC5D60080DAF8 /* GraphQLMovieDetailDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLMovieDetailDataFetcher.swift; sourceTree = "<group>"; };
 		9FB0ACEB259FC5D60080DAF8 /* GraphQLMovieListDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLMovieListDataFetcher.swift; sourceTree = "<group>"; };
@@ -138,7 +140,8 @@
 		9FB0AC71259FC47B0080DAF8 /* GraphQLDataSourceTests */ = {
 			isa = PBXGroup;
 			children = (
-				9FB0AC72259FC47B0080DAF8 /* GraphQLDataSourceTests.swift */,
+				9F2EFCB025A1AE0C00B19E06 /* GraphQLMovieListDataFetcherTests.swift */,
+				9F2EFCB625A1AE3100B19E06 /* GraphQLMovieDetailDataFetcherTests.swift */,
 				9FB0AC74259FC47B0080DAF8 /* Info.plist */,
 			);
 			path = GraphQLDataSourceTests;
@@ -349,7 +352,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FB0AC73259FC47B0080DAF8 /* GraphQLDataSourceTests.swift in Sources */,
+				9F2EFCB125A1AE0C00B19E06 /* GraphQLMovieListDataFetcherTests.swift in Sources */,
+				9F2EFCB725A1AE3100B19E06 /* GraphQLMovieDetailDataFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

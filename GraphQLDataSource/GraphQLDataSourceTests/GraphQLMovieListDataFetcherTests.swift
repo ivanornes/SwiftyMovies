@@ -1,5 +1,5 @@
 //
-//  GraphQLDataSourceTests.swift
+//  GraphQLMovieListDataFetcherTests.swift
 //  GraphQLDataSourceTests
 //
 //  Created by Ivan Ornes on 1/1/21.
@@ -8,9 +8,9 @@
 import XCTest
 @testable import GraphQLDataSource
 
-class GraphQLDataSourceTests: XCTestCase {
+class GraphQLMovieListDataFetcherTests: XCTestCase {
 
-    func test_NetworkTransport_movieListQueryReturnsData() {
+    func test_GraphQLMovieListDataFetcher_movieListQueryReturnsData() {
         let sut = makeSUT()
         
         let exp = expectation(description: "Wait for movie list request")
