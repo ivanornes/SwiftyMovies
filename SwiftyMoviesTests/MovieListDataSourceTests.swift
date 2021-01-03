@@ -11,7 +11,7 @@ import GraphQLDataSource
 
 class MovieListDataSourceTests: XCTestCase {
 
-    func test_NetworkTransport_movieListQueryReturnsData() {
+    func test_MovieListDataSource_movieListQueryReturnsData() {
         let sut = makeSUT()
         
         let exp = expectation(description: "Wait for movie list request")
@@ -23,7 +23,7 @@ class MovieListDataSourceTests: XCTestCase {
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 5.0)
+        wait(for: [exp], timeout: 10.0)
     }
     
     // MARK: Helpers
