@@ -61,6 +61,7 @@
 /* Begin PBXFileReference section */
 		9F2EFCB025A1AE0C00B19E06 /* GraphQLMovieListDataFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLMovieListDataFetcherTests.swift; sourceTree = "<group>"; };
 		9F2EFCB625A1AE3100B19E06 /* GraphQLMovieDetailDataFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLMovieDetailDataFetcherTests.swift; sourceTree = "<group>"; };
+		9F894E4425A1B35D002CE858 /* GraphQLDataSource-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GraphQLDataSource-iOS.plist"; sourceTree = "<group>"; };
 		9FB0AC64259FC47B0080DAF8 /* GraphQLDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GraphQLDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB0AC68259FC47B0080DAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB0AC6D259FC47B0080DAF8 /* GraphQLDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphQLDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +75,6 @@
 		9FB0ACF1259FC5D60080DAF8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9FB0ACF3259FC5D60080DAF8 /* GraphQLDataFetcherFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLDataFetcherFactory.swift; sourceTree = "<group>"; };
 		9FB0ADD525A04B270080DAF8 /* GraphQLDataSource-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "GraphQLDataSource-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FB0ADD625A04B280080DAF8 /* GraphQLDataSource-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GraphQLDataSource-iOS.plist"; path = "/Users/ivanornes/xcodeworkspace/SwiftyMovies/GraphQLDataSource/GraphQLDataSource-iOS.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 				9FB0ACEC259FC5D60080DAF8 /* Resources */,
 				9FB0ACF2259FC5D60080DAF8 /* Factories */,
 				9FB0AC68259FC47B0080DAF8 /* Info.plist */,
-				9FB0ADD625A04B280080DAF8 /* GraphQLDataSource-iOS.plist */,
+				9F894E4425A1B35D002CE858 /* GraphQLDataSource-iOS.plist */,
 			);
 			path = GraphQLDataSource;
 			sourceTree = "<group>";
