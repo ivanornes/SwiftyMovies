@@ -22,10 +22,13 @@ public final class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
     }
     
     public func loadMovies() {
-        isLoading = true
-        listDataSource.getMovies(limit: moviesPerPage * currentPage) { [weak self] result in
-            self?.processResult(result)
-            self?.isLoading = false
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
+            self.isLoading = true
+            self.listDataSource.getMovies(limit: self.moviesPerPage * self.currentPage) { [weak self] result in
+                self?.processResult(result)
+                self?.isLoading = false
+            }
         }
     }
     
