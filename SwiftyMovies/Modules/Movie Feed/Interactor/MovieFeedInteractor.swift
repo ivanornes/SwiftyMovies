@@ -33,9 +33,20 @@ public final class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
         switch result {
         case .success(let movies):
             guard !movies.isEmpty else { return }
-            presenter?.show(movies)
+            presenter?.show(filterDuplicates(filterDuplicates(movies)))
         case .failure(_): presenter?.showError()
         }
+    }
+    
+    func filterDuplicates(_ movies: [Movie]) -> [Movie] {
+        guard movies.count > moviesPerPage else { return movies }
+        var result: [Movie] = []
+        for movie in movies {
+            if !result.contains(movie) {
+                result.append(movie)
+            }
+        }
+        return result
     }
     
     public func loadNextPage() {
