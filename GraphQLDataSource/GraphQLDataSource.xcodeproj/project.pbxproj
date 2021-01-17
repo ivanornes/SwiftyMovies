@@ -25,6 +25,7 @@
 		9FB0ADCF25A04B270080DAF8 /* operationIDs.json in Resources */ = {isa = PBXBuildFile; fileRef = 9FB0ACEF259FC5D60080DAF8 /* operationIDs.json */; };
 		9FB0ADD025A04B270080DAF8 /* movieList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9FB0ACEE259FC5D60080DAF8 /* movieList.graphql */; };
 		9FB0ADD125A04B270080DAF8 /* movieDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9FB0ACED259FC5D60080DAF8 /* movieDetail.graphql */; };
+		9FB8318425B4E22500A0922C /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8318325B4E22500A0922C /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		9FB0ACF1259FC5D60080DAF8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9FB0ACF3259FC5D60080DAF8 /* GraphQLDataFetcherFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLDataFetcherFactory.swift; sourceTree = "<group>"; };
 		9FB0ADD525A04B270080DAF8 /* GraphQLDataSource-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "GraphQLDataSource-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FB8318325B4E22500A0922C /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		9FB0AC71259FC47B0080DAF8 /* GraphQLDataSourceTests */ = {
 			isa = PBXGroup;
 			children = (
+				9FB8318225B4E21E00A0922C /* Helper */,
 				9F2EFCB025A1AE0C00B19E06 /* GraphQLMovieListDataFetcherTests.swift */,
 				9F2EFCB625A1AE3100B19E06 /* GraphQLMovieDetailDataFetcherTests.swift */,
 				9FB0AC74259FC47B0080DAF8 /* Info.plist */,
@@ -181,6 +184,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FB8318225B4E21E00A0922C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9FB8318325B4E22500A0922C /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 			files = (
 				9F2EFCB125A1AE0C00B19E06 /* GraphQLMovieListDataFetcherTests.swift in Sources */,
 				9F2EFCB725A1AE3100B19E06 /* GraphQLMovieDetailDataFetcherTests.swift in Sources */,
+				9FB8318425B4E22500A0922C /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
