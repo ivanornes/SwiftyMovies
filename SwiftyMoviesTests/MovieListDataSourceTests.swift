@@ -28,8 +28,11 @@ class MovieListDataSourceTests: XCTestCase {
     
     // MARK: Helpers
     
-    func makeSUT() -> MovieListDataSource {
+    func makeSUT(file: StaticString = #file, line: UInt = #line) -> MovieListDataSource {
         let factory = GraphQLDataFetcherFactory(url: APIHost.production)
-        return GraphQLMovieListDataSource(fetcher: factory.makeListDataFetcher())
+        let dataSource = GraphQLMovieListDataSource(fetcher: factory.makeListDataFetcher())
+        trackForMemoryLeaks(factory, file: file, line: line)
+        trackForMemoryLeaks(dataSource, file: file, line: line)
+        return dataSource
     }
 }

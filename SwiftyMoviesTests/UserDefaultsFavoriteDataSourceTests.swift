@@ -86,7 +86,9 @@ class UserDefaultsFavoriteDataSourceTests: XCTestCase {
     
     // MARK: Helpers
     
-    func makeSUT() -> FavoriteDataSource {
-        return UserDefaultsFavoriteDataSource()
+    func makeSUT(file: StaticString = #file, line: UInt = #line) -> FavoriteDataSource {
+        let dataSource = UserDefaultsFavoriteDataSource()
+        trackForMemoryLeaks(dataSource, file: file, line: line)
+        return dataSource
     }
 }
