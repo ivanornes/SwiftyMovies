@@ -46,8 +46,11 @@ class GraphQLMovieDetailDataFetcherTests: XCTestCase {
     
     // MARK: Helpers
     
-    func makeSUT() -> GraphQLMovieDetailDataFetcher {
+    func makeSUT(file: StaticString = #file, line: UInt = #line) -> GraphQLMovieDetailDataFetcher {
         let factory = GraphQLDataFetcherFactory(url: URL(string: "https://tmdb.apps.quintero.io")!)
-        return factory.makeDetailDataFetcher()
+        let fetcher = factory.makeDetailDataFetcher()
+        trackForMemoryLeaks(factory, file: file, line: line)
+        trackForMemoryLeaks(fetcher, file: file, line: line)
+        return fetcher
     }
 }
