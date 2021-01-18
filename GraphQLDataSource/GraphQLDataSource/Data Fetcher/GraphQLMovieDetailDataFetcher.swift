@@ -22,7 +22,7 @@ public final class GraphQLMovieDetailDataFetcher {
 
     public func getMovie(id: Int, onCompletion: @escaping (Result<MovieDetailQuery.Data.Movie.Movie, Error>) -> Void) {
         let query = MovieDetailQuery(id: id)
-        let _ = client.fetch(query: query) { result in
+        _ = client.fetch(query: query) { result in
             switch result {
             case let .success(graphQLResult):
                 if let movie = graphQLResult.data?.movies.movie {

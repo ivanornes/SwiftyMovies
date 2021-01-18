@@ -18,7 +18,7 @@ public final class GraphQLMovieListDataFetcher {
 
     public func getMovies(limit: Int, onCompletion: @escaping (Result<[MovieListQuery.Data.Movie.TopRated.Edge.Node], Swift.Error>)->Void) {
         let query = MovieListQuery(limit: limit)
-        let _ = client.fetch(query: query, queue: DispatchQueue.global()) { result in
+        _ = client.fetch(query: query, queue: DispatchQueue.global()) { result in
             switch result {
             case let .success(graphQLResult):
                 let fetchedMovies = graphQLResult.data?.movies.topRated.edges?.compactMap { $0?.node } ?? []
