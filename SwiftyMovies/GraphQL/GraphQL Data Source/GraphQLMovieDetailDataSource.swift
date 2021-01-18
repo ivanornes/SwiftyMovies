@@ -19,8 +19,8 @@ public final class GraphQLMovieDetailDataSource: MovieDetailDataSource {
     public func getMovie(id: Int, onCompletion: @escaping (Result<MovieDetail, Error>) -> Void) {
         fetcher.getMovie(id: id) { result in
             switch result {
-            case .success(let movie): onCompletion(.success(MovieDetail(movie)))
-            case .failure(let error): onCompletion(.failure(error))
+            case let .success(movie): onCompletion(.success(MovieDetail(movie)))
+            case let .failure(error): onCompletion(.failure(error))
             }
         }
     }

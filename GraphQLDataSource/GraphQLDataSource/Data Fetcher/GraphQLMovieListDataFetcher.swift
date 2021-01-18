@@ -20,10 +20,10 @@ public final class GraphQLMovieListDataFetcher {
         let query = MovieListQuery(limit: limit)
         let _ = client.fetch(query: query, queue: DispatchQueue.global()) { result in
             switch result {
-            case .success(let graphQLResult):
+            case let .success(graphQLResult):
                 let fetchedMovies = graphQLResult.data?.movies.topRated.edges?.compactMap { $0?.node } ?? []
                 onCompletion(.success(fetchedMovies))
-            case .failure(let error):
+            case let .failure(error):
                 onCompletion(.failure(error))
             }
         }

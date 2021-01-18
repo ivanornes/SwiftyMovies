@@ -24,13 +24,13 @@ public final class GraphQLMovieDetailDataFetcher {
         let query = MovieDetailQuery(id: id)
         let _ = client.fetch(query: query) { result in
             switch result {
-            case .success(let graphQLResult):
+            case let .success(graphQLResult):
                 if let movie = graphQLResult.data?.movies.movie {
                     onCompletion(.success(movie))
                 } else {
                     onCompletion(.failure(GraphQLMovieDetailDataFetcherError.nilMovieData))
                 }
-            case .failure(let error):
+            case let .failure(error):
                 onCompletion(.failure(error))
             }
         }

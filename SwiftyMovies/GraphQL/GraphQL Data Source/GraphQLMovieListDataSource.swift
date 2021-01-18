@@ -19,8 +19,8 @@ public final class GraphQLMovieListDataSource: MovieListDataSource {
     public func getMovies(limit: Int, onCompletion: @escaping (Result<[Movie], Swift.Error>)->Void) {
         fetcher.getMovies(limit: limit) { result in
             switch result {
-            case .success(let movies): onCompletion(.success(movies.map(Movie.init)))
-            case .failure(let error): onCompletion(.failure(error))
+            case let .success(movies): onCompletion(.success(movies.map(Movie.init)))
+            case let .failure(error): onCompletion(.failure(error))
             }
         }
     }

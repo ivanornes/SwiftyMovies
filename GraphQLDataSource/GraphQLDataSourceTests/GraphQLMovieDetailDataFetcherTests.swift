@@ -32,11 +32,11 @@ class GraphQLMovieDetailDataFetcherTests: XCTestCase {
         let movieID = 680
         sut.getMovie(id: movieID) { result in
             switch result {
-            case .success(let movie):
+            case let .success(movie):
                 XCTAssertEqual(movie.id, movieID)
                 XCTAssertEqual(movie.title, "Pulp Fiction")
                 XCTAssertEqual(movie.releaseDate, "1994-09-10T00:00:00Z")
-            case .failure(let error): XCTFail("Error \(error) loading data")
+            case let .failure(error): XCTFail("Error \(error) loading data")
             }
             exp.fulfill()
         }

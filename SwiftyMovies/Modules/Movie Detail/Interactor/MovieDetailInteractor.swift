@@ -24,7 +24,7 @@ public final class MovieDetailInteractor: MovieDetailInteractorInputProtocol {
         mapAndPresentMovie(movie)
         movieDetailDataSource.getMovie(id: movie.id) { result in
             switch result {
-            case .success(let detail): self.mapAndPresentMovieDetail(detail)
+            case let .success(detail): self.mapAndPresentMovieDetail(detail)
             case .failure(_): break
             }
         }

@@ -34,7 +34,7 @@ public final class MovieFeedInteractor: MovieFeedInteractorInputProtocol {
     
     private func processResult(_ result: Result<[Movie], Error>) {
         switch result {
-        case .success(let movies):
+        case let .success(movies):
             guard !movies.isEmpty else { return }
             presenter?.show(filterDuplicates(filterDuplicates(movies)))
         case .failure(_): presenter?.showError()

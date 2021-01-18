@@ -18,8 +18,8 @@ class MovieListDataSourceTests: XCTestCase {
         let limit = 10
         sut.getMovies(limit: limit) { result in
             switch result {
-            case .success(let movies): XCTAssertTrue(movies.count == limit)
-            case .failure(let error): XCTFail("Error \(error.localizedDescription) loading movies data")
+            case let .success(movies): XCTAssertTrue(movies.count == limit)
+            case let .failure(error): XCTFail("Error \(error.localizedDescription) loading movies data")
             }
             exp.fulfill()
         }
