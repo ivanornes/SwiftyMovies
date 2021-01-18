@@ -16,10 +16,10 @@ public final class GraphQLDataFetcherFactory {
     }
     
     public func makeListDataFetcher() -> GraphQLMovieListDataFetcher {
-        return GraphQLMovieListDataFetcher(client: client)
+        GraphQLMovieListDataFetcher(client: client)
     }
     
     public func makeDetailDataFetcher() -> GraphQLMovieDetailDataFetcher {
-        return GraphQLMovieDetailDataFetcher(client: client)
+        GraphQLMovieDetailDataFetcher(client: client)
     }
 }
